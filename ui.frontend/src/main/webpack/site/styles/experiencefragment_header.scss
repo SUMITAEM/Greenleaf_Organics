@@ -1,7 +1,6 @@
 
 //== Header Experience Fragment
-//   AEM wraps XF content in: header.experiencefragment > .cmp-container > .aem-Grid > .aem-GridColumn
-//   We override the grid to flex so logo, nav, search sit in a row.
+//   DOM: header.experiencefragment > .cmp-container/.aem-Grid > children
 
 header.experiencefragment {
     background: $color-white;
@@ -12,7 +11,7 @@ header.experiencefragment {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     padding: 0 !important;
 
-    // Reset all AEM grid behavior inside header
+    // ── Reset AEM grid inside header to horizontal flex ──
     .aem-Grid {
         display: flex !important;
         align-items: center;
@@ -36,7 +35,7 @@ header.experiencefragment {
         clear: none !important;
     }
 
-    // Also handle simple layout (.cmp-container without grid)
+    // Simple layout fallback
     .cmp-container {
         display: flex;
         align-items: center;
@@ -46,7 +45,7 @@ header.experiencefragment {
         gap: 1.5rem;
     }
 
-    // Links
+    // ── Links base ──
     a {
         color: $color-foreground;
         text-decoration: none;
@@ -58,7 +57,7 @@ header.experiencefragment {
         }
     }
 
-    // Logo
+    // ── Logo ──
     .cmp-image {
         flex-shrink: 0;
 
@@ -69,33 +68,77 @@ header.experiencefragment {
         }
     }
 
-    // Navigation - takes available space
+    // ── Navigation ──
     .cmp-navigation {
         flex: 1;
     }
 
+    // Top-level list: horizontal row
     .cmp-navigation__group {
         margin: 0;
         padding: 0;
         list-style: none;
         display: flex;
-        gap: 0.25rem;
+        gap: 0;
         flex-wrap: wrap;
+        align-items: center;
     }
 
-    .cmp-navigation__item--level-0 > .cmp-navigation__group {
-        display: flex;
-        gap: 0.25rem;
+    // Level-0 items: position relative so dropdown anchors here
+    .cmp-navigation__item--level-0 {
+        position: relative;
+
+        // ── Dropdown: nested group hidden by default ──
+        > .cmp-navigation__group {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 220px;
+            background: $color-white;
+            border: 1px solid $color-border;
+            border-top: 3px solid $color-primary-green;
+            border-radius: 0 0 $border-radius $border-radius;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            padding: 0.5rem 0;
+            z-index: 1001;
+            flex-direction: column;
+            gap: 0;
+
+            // Dropdown items: vertical stack
+            .cmp-navigation__item {
+                width: 100%;
+            }
+
+            .cmp-navigation__item-link {
+                padding: 0.625rem 1.25rem;
+                border-radius: 0;
+                font-size: 0.875rem;
+                white-space: nowrap;
+
+                &:hover {
+                    background: $color-background-green;
+                    color: $color-primary-green;
+                }
+            }
+        }
+
+        // ── Show dropdown on hover ──
+        &:hover > .cmp-navigation__group {
+            display: flex;
+        }
     }
 
+    // Nav links: no layout-affecting transitions
     .cmp-navigation__item-link {
         display: block;
-        padding: 0.5rem 1rem;
+        padding: 0.625rem 1rem;
         font-weight: 500;
         font-size: 0.9375rem;
         border-radius: $border-radius;
-        transition: $transition;
+        transition: background-color 0.2s ease, color 0.2s ease;
         white-space: nowrap;
+        color: $color-foreground;
 
         &:hover {
             background: $color-background-green;
@@ -106,15 +149,34 @@ header.experiencefragment {
     .cmp-navigation__item--active > .cmp-navigation__item-link {
         font-weight: 600;
         color: $color-primary-green;
-        background: $color-background-green;
     }
 
-    // Hide language navigation globe
+    // ── Dropdown arrow indicator for items with children ──
+    .cmp-navigation__item--level-0:has(> .cmp-navigation__group) {
+        > .cmp-navigation__item-link::after {
+            content: '';
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: 6px;
+            vertical-align: middle;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 5px solid currentColor;
+            transition: transform 0.2s ease;
+        }
+
+        &:hover > .cmp-navigation__item-link::after {
+            transform: rotate(180deg);
+        }
+    }
+
+    // ── Hide language navigation ──
     .cmp-languagenavigation {
         display: none;
     }
 
-    // Search
+    // ── Search ──
     .cmp-search__field {
         display: flex;
         margin: 0;
@@ -128,7 +190,7 @@ header.experiencefragment {
         border-radius: $border-radius;
         font-size: 0.875rem;
         outline: none;
-        transition: $transition;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
         @media (max-width: $bp-mobile) {
             width: 140px;
