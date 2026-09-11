@@ -1,42 +1,18 @@
 
 //== Header Experience Fragment
+//   AEM wraps XF content in: header.experiencefragment > .cmp-container > .aem-Grid > .aem-GridColumn
+//   We override the grid to flex so logo, nav, search sit in a row.
 
 header.experiencefragment {
-    padding: 0;
-    border-bottom: 2px solid $color-background-green;
     background: $color-white;
+    border-bottom: 3px solid $color-primary-green;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 0 !important;
 
-    a {
-        color: $color-foreground;
-        text-decoration: none;
-
-        &:hover,
-        &:focus {
-            color: $color-primary-green;
-            text-decoration: none;
-        }
-    }
-
-    // The root container inside the XF
-    .cmp-container {
-        display: flex;
-        align-items: center;
-        max-width: $max-width;
-        margin: 0 auto;
-        padding: 0.75rem $gutter;
-        gap: 1.5rem;
-
-        @media (max-width: $bp-mobile) {
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-    }
-
-    // AEM responsive grid inside XF - override grid to flex
+    // Reset all AEM grid behavior inside header
     .aem-Grid {
         display: flex !important;
         align-items: center;
@@ -49,16 +25,40 @@ header.experiencefragment {
         @media (max-width: $bp-mobile) {
             flex-wrap: wrap;
             gap: 0.75rem;
+            padding: 0.5rem $gutter;
         }
     }
 
     .aem-GridColumn {
-        padding: 0 !important;
         float: none !important;
         width: auto !important;
+        padding: 0 !important;
+        clear: none !important;
     }
 
-    // Logo image
+    // Also handle simple layout (.cmp-container without grid)
+    .cmp-container {
+        display: flex;
+        align-items: center;
+        max-width: $max-width;
+        margin: 0 auto;
+        padding: 0.75rem $gutter;
+        gap: 1.5rem;
+    }
+
+    // Links
+    a {
+        color: $color-foreground;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            color: $color-primary-green;
+            text-decoration: none;
+        }
+    }
+
+    // Logo
     .cmp-image {
         flex-shrink: 0;
 
@@ -69,7 +69,7 @@ header.experiencefragment {
         }
     }
 
-    // Navigation
+    // Navigation - takes available space
     .cmp-navigation {
         flex: 1;
     }
@@ -83,16 +83,14 @@ header.experiencefragment {
         flex-wrap: wrap;
     }
 
-    .cmp-navigation__item--level-0 {
-        > .cmp-navigation__group {
-            display: flex;
-            gap: 0.25rem;
-        }
+    .cmp-navigation__item--level-0 > .cmp-navigation__group {
+        display: flex;
+        gap: 0.25rem;
     }
 
     .cmp-navigation__item-link {
         display: block;
-        padding: 0.5rem 0.875rem;
+        padding: 0.5rem 1rem;
         font-weight: 500;
         font-size: 0.9375rem;
         border-radius: $border-radius;
@@ -111,7 +109,7 @@ header.experiencefragment {
         background: $color-background-green;
     }
 
-    // Language Navigation - hide globe icon on prod, show as dropdown
+    // Hide language navigation globe
     .cmp-languagenavigation {
         display: none;
     }
@@ -133,7 +131,7 @@ header.experiencefragment {
         transition: $transition;
 
         @media (max-width: $bp-mobile) {
-            width: 100%;
+            width: 140px;
         }
 
         &:focus {

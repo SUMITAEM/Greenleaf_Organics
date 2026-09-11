@@ -2,11 +2,24 @@
 //== Footer Experience Fragment
 
 footer.experiencefragment {
-    padding: 0;
     background: $color-dark-green;
     color: rgba(255, 255, 255, 0.85);
     border-top: none;
-    margin-top: 3rem;
+    padding: 0 !important;
+    margin-top: 2rem;
+
+    // Override the global full-width rule - footer needs its own grid
+    .aem-Grid {
+        display: block !important;
+        max-width: $max-width;
+        margin: 0 auto;
+        padding: 0 $gutter;
+    }
+
+    .aem-GridColumn {
+        float: none !important;
+        width: 100% !important;
+    }
 
     a {
         color: rgba(255, 255, 255, 0.85) !important;
@@ -39,18 +52,11 @@ footer.experiencefragment {
         }
     }
 
-    // Override AEM grid for footer
-    .aem-Grid {
-        max-width: $max-width;
-        margin: 0 auto;
-        padding: 0 $gutter;
-    }
-
-    // The inner container (3-column section)
+    // The 3-column container: inner container's grid should be 3 columns
     .cmp-container {
-        .aem-Grid,
-        > .cmp-container {
-            display: grid;
+        // Inner grid for 3-column layout
+        > .aem-Grid {
+            display: grid !important;
             grid-template-columns: 2fr 1fr 1.5fr;
             gap: 2rem;
             padding: 3rem 0 2rem;
@@ -58,11 +64,16 @@ footer.experiencefragment {
             @media (max-width: $bp-mobile) {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
+                padding: 2rem 0;
+            }
+
+            > .aem-GridColumn {
+                width: auto !important;
             }
         }
     }
 
-    // Text components in footer columns
+    // Text in footer - override base text styles
     .cmp-text {
         max-width: none;
         margin: 0;
@@ -76,18 +87,14 @@ footer.experiencefragment {
         border-top: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    // Copyright bar - last text component
-    > .aem-Grid > .aem-GridColumn:last-child .cmp-text,
+    // Copyright bar - last direct grid column's text
+    > .aem-Grid > .aem-GridColumn:last-of-type > .cmp-text,
     > .cmp-container > .cmp-text:last-child {
         padding: 1.25rem 0;
         text-align: center;
         font-size: 0.875rem;
         opacity: 0.7;
-        max-width: $max-width;
-        margin: 0 auto;
 
-        p {
-            margin: 0;
-        }
+        p { margin: 0; }
     }
 }

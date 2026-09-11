@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
-    margin: 0;
+    justify-content: center;
 
     &__overlay {
         position: absolute;
@@ -15,7 +15,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, 0.4);
+        background: rgba(0, 0, 0, 0.45);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -25,63 +25,58 @@
         position: relative;
         text-align: center;
         max-width: 750px;
-        padding: 2rem $gutter;
+        padding: 3rem $gutter;
         color: $color-white;
     }
 
     &__heading {
-        font-size: 3.25rem;
+        font-size: 3.5rem;
         font-weight: 700;
         margin-bottom: 1rem;
         color: $color-white;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 
         @media (max-width: $bp-mobile) {
-            font-size: 2rem;
+            font-size: 2.25rem;
         }
     }
 
     &__subheading {
         font-size: 1.25rem;
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
         opacity: 0.95;
-        line-height: 1.6;
+        line-height: 1.7;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 
         @media (max-width: $bp-mobile) {
             font-size: 1rem;
+            margin-bottom: 1.5rem;
         }
     }
 
     &__cta {
         display: inline-block;
-        padding: 0.875rem 2.5rem;
+        padding: 1rem 3rem;
         background: $color-primary-green;
         color: $color-white;
         border-radius: $border-radius;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 1.1rem;
         text-decoration: none;
         transition: $transition;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
+        letter-spacing: 1px;
 
         &:hover {
             background: $color-light-green;
             color: $color-dark-green;
             text-decoration: none;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
     }
 
     @media (max-width: $bp-mobile) {
         min-height: 350px;
     }
-}
-
-// Hero banner inside AEM grid - make it full width
-.aem-GridColumn .cmp-herobanner {
-    margin-left: calc(-1 * #{$gutter});
-    margin-right: calc(-1 * #{$gutter});
-    width: calc(100% + #{$gutter} * 2);
 }

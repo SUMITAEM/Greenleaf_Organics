@@ -1,4 +1,4 @@
-//== Base
+//== Base Reset
 
 *,
 *::before,
@@ -20,6 +20,8 @@ body {
     color:       $color-foreground;
     background:  $color-white;
 }
+
+//== Typography
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-family-heading;
@@ -68,65 +70,92 @@ textarea {
     font: inherit;
 }
 
-//== AEM Page Layout
+// =================================================================
+//  AEM RESPONSIVE GRID - FORCE FULL-WIDTH STACKING
+//  This is the #1 fix: AEM floats grid columns side-by-side.
+//  We need every top-level section to be a full-width block row.
+// =================================================================
 
-.root.responsivegrid {
-    > .aem-Grid {
-        max-width: 100%;
-        margin: 0 auto;
+.aem-Grid {
+    display: block !important;
+    width: 100% !important;
+
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
     }
 }
 
-//== AEM Responsive Grid - Content Sections
-
 .aem-GridColumn {
+    float: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+    clear: both !important;
+}
+
+// =================================================================
+//  PAGE SECTIONS - Centered content with spacing
+// =================================================================
+
+.root.responsivegrid > .aem-Grid > .aem-GridColumn {
     > .cmp-container {
         max-width: $max-width;
         margin: 0 auto;
-        padding: 2rem $gutter;
+        padding: 3rem $gutter;
 
+        // Section title
+        > .aem-Grid > .aem-GridColumn > .cmp-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        // Card grid inside sections
         > .aem-Grid {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
 
             > .aem-GridColumn {
-                flex: 1 1 280px;
-                min-width: 0;
+                float: none !important;
+                width: auto !important;
             }
         }
     }
 }
 
-//== Section spacing for home page containers
-
-.root.responsivegrid > .aem-Grid > .aem-GridColumn {
-    &:not(:first-child):not(:last-child) {
-        padding: 1rem 0;
-    }
-}
-
-//== Section titles - centered
-
+// Title-only grid columns should span full width
 .cmp-title {
+    grid-column: 1 / -1;
     text-align: center;
-    margin-bottom: 1rem;
 
     &__text {
         color: $color-dark-green;
     }
 }
 
-//== Text component
+//== Section alternating backgrounds
+.root.responsivegrid > .aem-Grid > .aem-GridColumn {
+    &:nth-child(even) {
+        background: $color-background-green;
+    }
+    // Header and footer XFs: no background
+    &:first-child,
+    &:last-child {
+        background: transparent !important;
+    }
+}
 
+// =================================================================
+//  CORE COMPONENT STYLES
+// =================================================================
+
+//== Text component
 .cmp-text {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    line-height: 1.7;
 }
 
 //== Image component
-
 .cmp-image {
     &__image {
         width: 100%;
@@ -136,10 +165,10 @@ textarea {
 }
 
 //== Breadcrumb
-
 .cmp-breadcrumb {
     padding: 0.75rem 0;
     font-size: 0.875rem;
+    grid-column: 1 / -1;
 
     &__list {
         list-style: none;
@@ -162,16 +191,10 @@ textarea {
 
     &__item-link {
         color: $color-primary-green;
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: underline;
-        }
     }
 }
 
-//== Teaser component
-
+//== Teaser
 .cmp-teaser {
     background: $color-white;
     border-radius: $border-radius;
@@ -184,11 +207,9 @@ textarea {
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     }
 
-    &__image {
-        .cmp-image__image {
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
-        }
+    &__image .cmp-image__image {
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
     }
 
     &__content {
@@ -198,88 +219,68 @@ textarea {
     &__title {
         color: $color-dark-green;
         margin-bottom: 0.5rem;
-        font-size: 1.125rem;
 
-        a {
-            color: inherit;
-            text-decoration: none;
-
-            &:hover {
-                color: $color-primary-green;
-            }
-        }
+        a { color: inherit; text-decoration: none; &:hover { color: $color-primary-green; } }
     }
 
     &__description {
         font-size: 0.9375rem;
         color: $color-foreground-light;
-        line-height: 1.5;
-
         p { margin: 0; }
     }
 }
 
 //== Separator
+.cmp-separator__horizontal-rule {
+    border: 0;
+    border-top: 1px solid $color-border;
+    margin: 2rem 0;
+}
 
-.cmp-separator {
-    &__horizontal-rule {
-        border: 0;
-        border-top: 1px solid $color-border;
-        margin: 2rem 0;
+//== Form styles
+.cmp-form-text {
+    margin-bottom: 1rem;
+    grid-column: 1 / -1;
+
+    &__label {
+        display: block;
+        margin-bottom: 0.375rem;
+        font-weight: 500;
+        color: $color-dark-green;
+    }
+
+    &__text,
+    &__textarea {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 1px solid $color-border;
+        border-radius: $border-radius;
+        font-size: 1rem;
+        outline: none;
+        transition: $transition;
+
+        &:focus {
+            border-color: $color-primary-green;
+            box-shadow: 0 0 0 3px rgba(74, 124, 35, 0.15);
+        }
+    }
+
+    &__textarea {
+        min-height: 120px;
+        resize: vertical;
     }
 }
 
-//== Form fields
+.cmp-form-button {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: $color-primary-green;
+    color: $color-white;
+    border: none;
+    border-radius: $border-radius;
+    font-weight: 600;
+    cursor: pointer;
+    transition: $transition;
 
-.cmp-form {
-    &-text {
-        margin-bottom: 1rem;
-
-        &__label {
-            display: block;
-            margin-bottom: 0.375rem;
-            font-weight: 500;
-            color: $color-dark-green;
-        }
-
-        &__text,
-        &__textarea {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 1px solid $color-border;
-            border-radius: $border-radius;
-            font-size: 1rem;
-            outline: none;
-            transition: $transition;
-
-            &:focus {
-                border-color: $color-primary-green;
-                box-shadow: 0 0 0 3px rgba(74, 124, 35, 0.15);
-            }
-        }
-
-        &__textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-    }
-
-    &-button {
-        .cmp-form-button {
-            display: inline-block;
-            padding: 0.75rem 2rem;
-            background: $color-primary-green;
-            color: $color-white;
-            border: none;
-            border-radius: $border-radius;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: $transition;
-
-            &:hover {
-                background: $color-dark-green;
-            }
-        }
-    }
+    &:hover { background: $color-dark-green; }
 }
