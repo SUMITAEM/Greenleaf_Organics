@@ -1,6 +1,68 @@
 
-//== Container main content style, used on page template
+//== Main content container
 
 main.container {
-    padding: .5em 1em;
+    padding: 0;
+    min-height: 50vh;
+}
+
+//== Page-level layout wrapper - center content sections
+
+.page {
+    > .cmp-container {
+        > .aem-Grid {
+            > .aem-GridColumn {
+                > .cmp-container {
+                    max-width: $max-width;
+                    margin: 0 auto;
+                    padding: 2.5rem $gutter;
+                }
+            }
+        }
+    }
+}
+
+//== Section backgrounds - alternating
+
+.root.responsivegrid > .aem-Grid > .aem-GridColumn {
+    &:nth-child(odd) {
+        background: $color-white;
+    }
+
+    &:nth-child(even) {
+        background: $color-background-green;
+    }
+
+    // First child (header XF) and last child (footer XF) no bg
+    &:first-child,
+    &:last-child {
+        background: transparent;
+    }
+}
+
+//== Product grid - use CSS grid for card layouts
+
+.cmp-container > .aem-Grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    > .aem-GridColumn {
+        flex: 1 1 250px;
+        max-width: 100%;
+    }
+}
+
+//== Fix for AEM responsive grid floats
+
+.aem-Grid {
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+.aem-GridColumn {
+    min-height: 0;
 }

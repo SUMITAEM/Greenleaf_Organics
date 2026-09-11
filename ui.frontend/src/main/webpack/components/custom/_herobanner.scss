@@ -7,6 +7,7 @@
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
+    margin: 0;
 
     &__overlay {
         position: absolute;
@@ -23,18 +24,19 @@
     &__content {
         position: relative;
         text-align: center;
-        max-width: $max-width;
+        max-width: 750px;
         padding: 2rem $gutter;
         color: $color-white;
     }
 
     &__heading {
-        font-size: 3rem;
+        font-size: 3.25rem;
         font-weight: 700;
         margin-bottom: 1rem;
         color: $color-white;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 
-        @media (max-width: 768px) {
+        @media (max-width: $bp-mobile) {
             font-size: 2rem;
         }
     }
@@ -42,16 +44,17 @@
     &__subheading {
         font-size: 1.25rem;
         margin-bottom: 2rem;
-        opacity: 0.9;
+        opacity: 0.95;
+        line-height: 1.6;
 
-        @media (max-width: 768px) {
+        @media (max-width: $bp-mobile) {
             font-size: 1rem;
         }
     }
 
     &__cta {
         display: inline-block;
-        padding: 0.875rem 2rem;
+        padding: 0.875rem 2.5rem;
         background: $color-primary-green;
         color: $color-white;
         border-radius: $border-radius;
@@ -59,17 +62,26 @@
         font-size: 1.1rem;
         text-decoration: none;
         transition: $transition;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
 
         &:hover {
-            background: $color-dark-green;
-            color: $color-white;
+            background: $color-light-green;
+            color: $color-dark-green;
             text-decoration: none;
             transform: translateY(-2px);
-            box-shadow: $box-shadow;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
         }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: $bp-mobile) {
         min-height: 350px;
     }
+}
+
+// Hero banner inside AEM grid - make it full width
+.aem-GridColumn .cmp-herobanner {
+    margin-left: calc(-1 * #{$gutter});
+    margin-right: calc(-1 * #{$gutter});
+    width: calc(100% + #{$gutter} * 2);
 }

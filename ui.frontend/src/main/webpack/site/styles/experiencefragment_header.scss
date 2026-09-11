@@ -1,5 +1,5 @@
 
-//== XF Header style - Greenleaf Organics
+//== Header Experience Fragment
 
 header.experiencefragment {
     padding: 0;
@@ -7,7 +7,8 @@ header.experiencefragment {
     background: $color-white;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 
     a {
         color: $color-foreground;
@@ -20,36 +21,55 @@ header.experiencefragment {
         }
     }
 
-    //== Grid layout
-
+    // The root container inside the XF
     .cmp-container {
         display: flex;
         align-items: center;
-        justify-content: space-between;
         max-width: $max-width;
         margin: 0 auto;
         padding: 0.75rem $gutter;
         gap: 1.5rem;
 
-        @media (max-width: 768px) {
+        @media (max-width: $bp-mobile) {
             flex-wrap: wrap;
             gap: 0.75rem;
         }
     }
 
-    //== Logo
+    // AEM responsive grid inside XF - override grid to flex
+    .aem-Grid {
+        display: flex !important;
+        align-items: center;
+        max-width: $max-width;
+        margin: 0 auto;
+        padding: 0.75rem $gutter;
+        gap: 1.5rem;
+        flex-wrap: nowrap;
 
-    .cmp-image {
-        flex-shrink: 0;
-
-        img {
-            height: 40px;
-            width: auto;
+        @media (max-width: $bp-mobile) {
+            flex-wrap: wrap;
+            gap: 0.75rem;
         }
     }
 
-    //== Navigation
+    .aem-GridColumn {
+        padding: 0 !important;
+        float: none !important;
+        width: auto !important;
+    }
 
+    // Logo image
+    .cmp-image {
+        flex-shrink: 0;
+
+        &__image {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+    }
+
+    // Navigation
     .cmp-navigation {
         flex: 1;
     }
@@ -60,6 +80,7 @@ header.experiencefragment {
         list-style: none;
         display: flex;
         gap: 0.25rem;
+        flex-wrap: wrap;
     }
 
     .cmp-navigation__item--level-0 {
@@ -71,10 +92,12 @@ header.experiencefragment {
 
     .cmp-navigation__item-link {
         display: block;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0.875rem;
         font-weight: 500;
+        font-size: 0.9375rem;
         border-radius: $border-radius;
         transition: $transition;
+        white-space: nowrap;
 
         &:hover {
             background: $color-background-green;
@@ -85,10 +108,15 @@ header.experiencefragment {
     .cmp-navigation__item--active > .cmp-navigation__item-link {
         font-weight: 600;
         color: $color-primary-green;
+        background: $color-background-green;
     }
 
-    //== Search
+    // Language Navigation - hide globe icon on prod, show as dropdown
+    .cmp-languagenavigation {
+        display: none;
+    }
 
+    // Search
     .cmp-search__field {
         display: flex;
         margin: 0;
@@ -96,6 +124,7 @@ header.experiencefragment {
 
     .cmp-search__input {
         height: 36px;
+        width: 180px;
         padding: 0.5rem 1rem;
         border: 1px solid $color-border;
         border-radius: $border-radius;
@@ -103,9 +132,17 @@ header.experiencefragment {
         outline: none;
         transition: $transition;
 
+        @media (max-width: $bp-mobile) {
+            width: 100%;
+        }
+
         &:focus {
             border-color: $color-primary-green;
             box-shadow: 0 0 0 3px rgba(74, 124, 35, 0.15);
         }
+    }
+
+    .cmp-search__icon {
+        display: none;
     }
 }

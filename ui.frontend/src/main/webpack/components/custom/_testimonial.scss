@@ -1,19 +1,21 @@
 .cmp-testimonial {
     background: $color-white;
     border-radius: $border-radius;
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     box-shadow: $box-shadow;
     text-align: center;
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
+    border-top: 4px solid $color-primary-green;
 
     &__rating {
-        margin-bottom: 1rem;
+        margin-bottom: 1.25rem;
     }
 
     &__star {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         color: $color-border;
+        margin: 0 2px;
 
         &--filled {
             color: $color-star;
@@ -24,7 +26,7 @@
         font-size: 1.125rem;
         font-style: italic;
         color: $color-foreground;
-        line-height: 1.7;
+        line-height: 1.8;
         margin: 0 0 1.5rem;
         padding: 0;
         border: none;
@@ -32,11 +34,12 @@
 
         &::before {
             content: '\201C';
-            font-size: 3rem;
+            font-size: 4rem;
             color: $color-light-green;
             line-height: 1;
             display: block;
             margin-bottom: 0.5rem;
+            font-family: Georgia, serif;
         }
     }
 
@@ -45,6 +48,8 @@
         align-items: center;
         justify-content: center;
         gap: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid $color-border;
     }
 
     &__avatar {
