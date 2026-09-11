@@ -1,5 +1,15 @@
 
 //== Footer Experience Fragment
+//   AEM DOM: footer.experiencefragment
+//     > .cmp-container (root, responsiveGrid)
+//       > .aem-Grid
+//         > .aem-GridColumn > .cmp-container (3-col wrapper)
+//           > .aem-Grid
+//             > .aem-GridColumn > .cmp-text (about)
+//             > .aem-GridColumn > .cmp-text (links)
+//             > .aem-GridColumn > .cmp-text (contact)
+//         > .aem-GridColumn > .cmp-separator
+//         > .aem-GridColumn > .cmp-text (copyright)
 
 footer.experiencefragment {
     background: $color-dark-green;
@@ -8,19 +18,46 @@ footer.experiencefragment {
     padding: 0 !important;
     margin-top: 2rem;
 
-    // Override the global full-width rule - footer needs its own grid
-    .aem-Grid {
+    // ── Override ALL aem-Grid/Column inside footer ──
+    // Must beat the global _base.scss rules
+    &.experiencefragment .aem-Grid {
         display: block !important;
+        width: 100% !important;
         max-width: $max-width;
         margin: 0 auto;
         padding: 0 $gutter;
     }
 
-    .aem-GridColumn {
+    &.experiencefragment .aem-GridColumn {
         float: none !important;
         width: 100% !important;
+        padding: 0 !important;
+        clear: none !important;
     }
 
+    // ── 3-Column inner container ──
+    // The inner .cmp-container wraps 3 text components in a grid
+    &.experiencefragment .cmp-container .cmp-container > .aem-Grid,
+    &.experiencefragment .cmp-container > .aem-Grid > .aem-GridColumn > .cmp-container > .aem-Grid {
+        display: grid !important;
+        grid-template-columns: 2fr 1fr 1.5fr;
+        gap: 2.5rem;
+        padding: 3rem 0 2rem;
+
+        @media (max-width: $bp-mobile) {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            padding: 2rem 0;
+        }
+
+        // Columns inside the 3-col grid must NOT be full-width
+        > .aem-GridColumn {
+            width: auto !important;
+            float: none !important;
+        }
+    }
+
+    // ── Typography ──
     a {
         color: rgba(255, 255, 255, 0.85) !important;
         text-decoration: none;
@@ -33,13 +70,15 @@ footer.experiencefragment {
 
     h3 {
         color: $color-white;
-        font-size: 1.125rem;
+        font-size: 1.25rem;
         margin-bottom: 1rem;
+        font-weight: 600;
     }
 
     p {
         color: rgba(255, 255, 255, 0.75);
         line-height: 1.7;
+        font-size: 0.9375rem;
     }
 
     ul {
@@ -49,52 +88,43 @@ footer.experiencefragment {
 
         li {
             margin-bottom: 0.5rem;
-        }
-    }
 
-    // The 3-column container: inner container's grid should be 3 columns
-    .cmp-container {
-        // Inner grid for 3-column layout
-        > .aem-Grid {
-            display: grid !important;
-            grid-template-columns: 2fr 1fr 1.5fr;
-            gap: 2rem;
-            padding: 3rem 0 2rem;
+            a {
+                display: inline-block;
+                padding: 0.125rem 0;
 
-            @media (max-width: $bp-mobile) {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-                padding: 2rem 0;
-            }
-
-            > .aem-GridColumn {
-                width: auto !important;
+                &:hover {
+                    padding-left: 4px;
+                }
             }
         }
     }
 
-    // Text in footer - override base text styles
+    // ── Text component overrides ──
     .cmp-text {
         max-width: none;
         margin: 0;
         color: rgba(255, 255, 255, 0.85);
     }
 
-    // Separator
+    // ── Separator ──
     .cmp-separator__horizontal-rule {
         margin: 0;
         border: 0;
         border-top: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    // Copyright bar - last direct grid column's text
-    > .aem-Grid > .aem-GridColumn:last-of-type > .cmp-text,
-    > .cmp-container > .cmp-text:last-child {
+    // ── Copyright bar ──
+    // Target the last text component (after the separator)
+    > .cmp-container > .aem-Grid > .aem-GridColumn:last-child .cmp-text,
+    > .aem-Grid > .aem-GridColumn:last-child .cmp-text {
         padding: 1.25rem 0;
         text-align: center;
         font-size: 0.875rem;
         opacity: 0.7;
 
-        p { margin: 0; }
+        p {
+            margin: 0;
+        }
     }
 }
