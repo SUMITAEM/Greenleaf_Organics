@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        pageTitle="About Us - Greenleaf Organics"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="About Us"
+        cq:template="/conf/greenleaf-organics/settings/wcm/templates/about-page"
+        sling:resourceType="greenleaf-organics/components/page"
+        isShowInNavigation="{Boolean}true">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="greenleaf-organics/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/container"
+                layout="responsiveGrid">
+                <hero-section
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/container"
+                    layout="responsiveGrid">
+                    <herobanner
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/custom/herobanner"
+                        backgroundImage="/content/dam/greenleaf-organics/images/hero/about-hero.jpg"
+                        heading="Our Story"
+                        subheading="Growing organic since 2005, we believe nature knows best"
+                        overlayOpacity="{Long}35"/>
+                </hero-section>
+                <story-section
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/container"
+                    layout="responsiveGrid">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/title"
+                        jcr:title="From Seed to Table"
+                        type="h2"/>
+                    <text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/text"
+                        textIsRich="true"
+                        text="&lt;p&gt;Greenleaf Organics was founded in 2005 by a small group of passionate farmers in the heart of California's Central Valley. What began as a single family farm with a dream of bringing truly organic produce to local communities has grown into a trusted name in sustainable agriculture. From the very beginning, our founders believed that food should be grown the way nature intended — free from synthetic pesticides, artificial fertilizers, and genetically modified organisms.&lt;/p&gt;&lt;p&gt;Over the past two decades, we have built lasting partnerships with over 50 local farms that share our commitment to organic practices and environmental stewardship. Each of our partner farms is carefully vetted and certified organic, ensuring that every product bearing the Greenleaf name meets the highest standards of quality and sustainability. Together, we cultivate more than 200 varieties of fruits, vegetables, grains, and herbs across thousands of acres of responsibly managed farmland.&lt;/p&gt;&lt;p&gt;Our mission is simple: to make fresh, organic food accessible to everyone. We believe that choosing organic should not be a luxury — it should be an everyday option for families who care about their health and the health of our planet. Through our farm-to-table delivery service, community markets, and retail partnerships, we are working to bring the goodness of organic farming to tables across the country, one harvest at a time.&lt;/p&gt;"/>
+                    <image
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/image"
+                        fileReference="/content/dam/greenleaf-organics/images/hero/farm-story.jpg"
+                        alt="Our organic farm"/>
+                </story-section>
+                <values-section
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/container"
+                    layout="responsiveGrid">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/title"
+                        jcr:title="Our Values"
+                        type="h2"/>
+                    <featuregrid-organic
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/custom/featuregrid"
+                        icon="leaf"
+                        title="100% Organic"
+                        description="Every product is certified organic, grown without synthetic pesticides or fertilizers."/>
+                    <featuregrid-delivery
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/custom/featuregrid"
+                        icon="truck"
+                        title="Farm Fresh Delivery"
+                        description="From harvest to your doorstep in under 48 hours, ensuring peak freshness."/>
+                    <featuregrid-community
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/custom/featuregrid"
+                        icon="heart"
+                        title="Community First"
+                        description="We partner with over 50 local farms, supporting sustainable agriculture in our community."/>
+                    <featuregrid-quality
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/custom/featuregrid"
+                        icon="shield"
+                        title="Quality Guaranteed"
+                        description="Rigorous quality testing at every stage, from soil to shelf."/>
+                </values-section>
+                <team-section
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/container"
+                    layout="responsiveGrid">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/title"
+                        jcr:title="Meet Our Team"
+                        type="h2"/>
+                    <text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/text"
+                        textIsRich="true"
+                        text="&lt;p&gt;Behind every leaf of lettuce and basket of berries is a dedicated team of professionals who are passionate about organic living. Our leadership team brings together decades of experience in organic agriculture, sustainable business practices, and community development. From our CEO and co-founder Maria Gonzalez, who left a career in corporate agriculture to pursue her vision of accessible organic food, to our Head of Farming Operations David Chen, who oversees our network of partner farms — every member of the Greenleaf family is driven by a shared commitment to a healthier, more sustainable future.&lt;/p&gt;"/>
+                </team-section>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        pageTitle="Organic Living Guide - Greenleaf Organics"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="10 Tips for Organic Living on a Budget"
+        cq:template="/conf/greenleaf-organics/settings/wcm/templates/blog-article"
+        sling:resourceType="greenleaf-organics/components/page"
+        isShowInNavigation="{Boolean}true">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="greenleaf-organics/components/container"
+            layout="responsiveGrid">
+            <hero-image-section
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/container"
+                layout="responsiveGrid">
+                <image
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/image"
+                    fileReference="/content/dam/greenleaf-organics/images/blog/organic-living.jpg"
+                    alt="Organic living"/>
+            </hero-image-section>
+            <article-content
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/title"
+                    jcr:title="10 Tips for Organic Living on a Budget"
+                    type="h1"/>
+                <text-intro
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/text"
+                    text="&lt;p>Living an organic lifestyle doesn't have to mean spending a fortune at the grocery store. With a little planning and some smart strategies, you can fill your kitchen with wholesome, certified organic foods while staying within your budget. At Greenleaf Organics, we believe that everyone deserves access to clean, sustainably grown food — and we're here to show you how to make it happen.&lt;/p>&lt;p>The key to affordable organic living starts with understanding what to prioritize. Not every item in your cart needs to carry an organic label. Focus your organic spending on the items that matter most — leafy greens, berries, and other produce known to carry higher pesticide residues when conventionally grown.&lt;/p>"/>
+                <text-tips
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/text"
+                    text="&lt;h2>Shop Seasonally and Locally&lt;/h2>&lt;p>One of the easiest ways to save on organic produce is to buy what's in season. Seasonal fruits and vegetables are more abundant, which drives prices down naturally. Visit your local farmers' market where you can often find organic produce at lower prices than grocery stores — and you'll be supporting local growers in the process. Many farmers practice organic methods even if they haven't gone through the formal certification process, so don't be afraid to ask about their growing practices.&lt;/p>&lt;h2>Grow Your Own Herbs and Greens&lt;/h2>&lt;p>Even if you don't have a sprawling backyard, a small herb garden on your windowsill or balcony can save you a surprising amount of money over time. Basil, cilantro, mint, rosemary, and parsley are all easy to grow at home. A single packet of organic seeds costs a few dollars and can yield months of fresh herbs that would otherwise cost several dollars per bunch at the store. Lettuce, spinach, and microgreens are also excellent choices for container gardening.&lt;/p>"/>
+                <text-planning
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/text"
+                    text="&lt;h2>Plan Your Meals and Buy in Bulk&lt;/h2>&lt;p>Meal planning is a game-changer for any budget, and it's especially powerful when you're buying organic. By mapping out your meals for the week, you avoid impulse purchases and reduce food waste — two of the biggest budget drains. Pair your meal plan with bulk buying for staples like organic rice, quinoa, oats, dried beans, and nuts. These items have a long shelf life and are significantly cheaper per unit when purchased in larger quantities.&lt;/p>&lt;p>Another often-overlooked strategy is to preserve seasonal produce. When organic berries or tomatoes are at peak season and priced low, buy extra and freeze them for smoothies, sauces, and soups throughout the year. Canning and pickling are also wonderful ways to extend the life of seasonal organic vegetables while adding variety to your pantry.&lt;/p>"/>
+            </article-content>
+            <related-posts
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/title"
+                    jcr:title="Related Articles"
+                    type="h2"/>
+                <teaser-seasonal-recipes
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/teaser"
+                    jcr:title="Seasonal Recipes: Fall Harvest Edition"
+                    jcr:description="Celebrate the bounty of autumn with wholesome recipes featuring seasonal organic produce."
+                    actionsEnabled="false"
+                    linkURL="/content/greenleaf-organics/us/en/blog/seasonal-recipes"
+                    fileReference="/content/dam/greenleaf-organics/images/blog/seasonal-recipes.jpg"/>
+            </related-posts>
+        </root>
+    </jcr:content>
+</jcr:root>

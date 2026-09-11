@@ -1,0 +1,16 @@
+<sly data-sly-use.model="com.greenleaf.organics.core.models.TestimonialModel"/>
+<div class="cmp-testimonial" data-sly-test="${model.quote}">
+    <div class="cmp-testimonial__rating" data-sly-test="${model.starRating}">
+        <sly data-sly-list="${model.stars}">
+            <span class="cmp-testimonial__star cmp-testimonial__star--filled">&#9733;</span>
+        </sly>
+    </div>
+    <blockquote class="cmp-testimonial__quote">${model.quote}</blockquote>
+    <div class="cmp-testimonial__author">
+        <img class="cmp-testimonial__avatar" src="${model.authorImage @ context='uri'}" alt="${model.authorName}" data-sly-test="${model.authorImage}"/>
+        <div class="cmp-testimonial__author-info">
+            <span class="cmp-testimonial__name">${model.authorName}</span>
+            <span class="cmp-testimonial__role" data-sly-test="${model.authorRole}">${model.authorRole}</span>
+        </div>
+    </div>
+</div>

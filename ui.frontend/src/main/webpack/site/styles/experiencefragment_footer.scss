@@ -1,0 +1,72 @@
+
+//== XF Footer style - Greenleaf Organics
+
+footer.experiencefragment {
+    padding: 3rem 0 0;
+    background: $color-dark-green;
+    color: rgba(255, 255, 255, 0.85);
+    border-top: none;
+
+    a {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+
+        &:hover {
+            color: $color-white;
+            text-decoration: underline;
+        }
+    }
+
+    h3 {
+        color: $color-white;
+        font-size: 1.125rem;
+        margin-bottom: 1rem;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    //== 3-column layout
+
+    > .cmp-container {
+        max-width: $max-width;
+        margin: 0 auto;
+        padding: 0 $gutter;
+
+        > .cmp-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr;
+            gap: 2rem;
+            padding-bottom: 2rem;
+
+            @media (max-width: 768px) {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    }
+
+    //== Separator
+
+    .cmp-separator__horizontal-rule {
+        margin: 0;
+        border: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    //== Copyright bar
+
+    > .cmp-container > .cmp-text:last-child {
+        padding: 1.25rem $gutter;
+        text-align: center;
+        font-size: 0.875rem;
+        opacity: 0.7;
+    }
+}

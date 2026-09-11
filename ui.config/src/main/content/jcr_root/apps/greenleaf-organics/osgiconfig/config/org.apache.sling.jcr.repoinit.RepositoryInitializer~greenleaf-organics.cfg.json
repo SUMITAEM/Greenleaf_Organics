@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/greenleaf-organics",
+        "create path (nt:unstructured) /content/dam/greenleaf-organics/jcr:content",
+        "set properties on /content/dam/greenleaf-organics/jcr:content\n  set cq:conf{String} to /conf/greenleaf-organics\n  set jcr:title{String} to \"Greenleaf Organics\"\nend"
+    ]
+}

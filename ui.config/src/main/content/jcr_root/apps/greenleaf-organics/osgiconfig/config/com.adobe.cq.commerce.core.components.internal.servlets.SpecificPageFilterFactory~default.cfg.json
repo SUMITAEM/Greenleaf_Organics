@@ -1,0 +1,3 @@
+{
+  "sling.filter.pattern": "/content/greenleaf-organics/.*?/(category-page|product-page)"
+}

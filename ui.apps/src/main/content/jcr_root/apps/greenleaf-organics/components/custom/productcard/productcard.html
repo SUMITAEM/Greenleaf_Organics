@@ -1,0 +1,13 @@
+<sly data-sly-use.model="com.greenleaf.organics.core.models.ProductCardModel"/>
+<div class="cmp-productcard" data-sly-test="${model.productName}">
+    <div class="cmp-productcard__image-wrapper">
+        <img class="cmp-productcard__image" src="${model.productImage @ context='uri'}" alt="${model.productName}" data-sly-test="${model.productImage}"/>
+        <span class="cmp-productcard__badge" data-sly-test="${model.badge}">${model.badge}</span>
+    </div>
+    <div class="cmp-productcard__info">
+        <h3 class="cmp-productcard__name">${model.productName}</h3>
+        <p class="cmp-productcard__price" data-sly-test="${model.price}">${model.price}</p>
+        <p class="cmp-productcard__description" data-sly-test="${model.description}">${model.description}</p>
+        <a class="cmp-productcard__link" href="${model.linkURL @ context='uri'}" data-sly-test="${model.linkURL}">View Product</a>
+    </div>
+</div>

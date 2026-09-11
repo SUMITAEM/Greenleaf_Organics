@@ -1,0 +1,75 @@
+.cmp-herobanner {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__content {
+        position: relative;
+        text-align: center;
+        max-width: $max-width;
+        padding: 2rem $gutter;
+        color: $color-white;
+    }
+
+    &__heading {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: $color-white;
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+
+    &__subheading {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+
+        @media (max-width: 768px) {
+            font-size: 1rem;
+        }
+    }
+
+    &__cta {
+        display: inline-block;
+        padding: 0.875rem 2rem;
+        background: $color-primary-green;
+        color: $color-white;
+        border-radius: $border-radius;
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: $transition;
+
+        &:hover {
+            background: $color-dark-green;
+            color: $color-white;
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: $box-shadow;
+        }
+    }
+
+    @media (max-width: 768px) {
+        min-height: 350px;
+    }
+}

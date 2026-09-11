@@ -1,0 +1,36 @@
+
+//== Font
+
+$font-family:           'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$font-family-heading:   'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$font-size:             16px;
+$font-height:           1.6;
+
+//== Brand Colors - Greenleaf Organics
+
+$color-dark-green:      #2D5016;
+$color-primary-green:   #4A7C23;
+$color-light-green:     #8BC34A;
+$color-background-green:#F1F8E9;
+$color-white:           #FFFFFF;
+
+//== Functional Colors
+
+$color-foreground:      #333333;
+$color-foreground-light:#666666;
+$color-background:      $color-white;
+$color-link:            $color-primary-green;
+$color-link-hover:      $color-dark-green;
+$color-border:          #E0E0E0;
+$color-badge-organic:   #4A7C23;
+$color-badge-local:     #FF9800;
+$color-badge-vegan:     #8BC34A;
+$color-star:            #FFC107;
+
+//== Layout
+
+$max-width:             1200px;
+$gutter:                16px;
+$border-radius:         8px;
+$box-shadow:            0 2px 8px rgba(0, 0, 0, 0.1);
+$transition:            all 0.3s ease;

@@ -1,0 +1,15 @@
+<div class="cmp-newslettersignup" data-sly-test="${properties.heading}">
+    <h2 class="cmp-newslettersignup__heading">${properties.heading}</h2>
+    <p class="cmp-newslettersignup__description" data-sly-test="${properties.description}">
+        ${properties.description}
+    </p>
+    <form class="cmp-newslettersignup__form">
+        <input class="cmp-newslettersignup__input"
+               type="email"
+               placeholder="${properties.placeholder || 'Enter your email address'}"
+               required="required"/>
+        <button class="cmp-newslettersignup__button" type="submit">
+            ${properties.buttonLabel || 'Subscribe'}
+        </button>
+    </form>
+</div>

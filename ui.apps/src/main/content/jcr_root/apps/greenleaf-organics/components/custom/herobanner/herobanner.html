@@ -1,0 +1,15 @@
+<sly data-sly-use.model="com.greenleaf.organics.core.models.HerobannerModel"/>
+<section class="cmp-herobanner" data-sly-test="${model.heading}"
+         style="background-image: url('${model.backgroundImage @ context='uri'}');">
+    <div class="cmp-herobanner__overlay">
+        <div class="cmp-herobanner__content">
+            <h1 class="cmp-herobanner__heading">${model.heading}</h1>
+            <p class="cmp-herobanner__subheading" data-sly-test="${model.subheading}">
+                ${model.subheading}
+            </p>
+            <a class="cmp-herobanner__cta" href="${model.ctaLink}" data-sly-test="${model.ctaLabel}">
+                ${model.ctaLabel}
+            </a>
+        </div>
+    </div>
+</section>

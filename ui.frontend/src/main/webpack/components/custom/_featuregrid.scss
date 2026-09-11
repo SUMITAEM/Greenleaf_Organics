@@ -1,0 +1,38 @@
+.cmp-featuregrid {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: $color-white;
+    border-radius: $border-radius;
+    transition: $transition;
+
+    &:hover {
+        box-shadow: $box-shadow;
+        transform: translateY(-2px);
+    }
+
+    &__icon {
+        color: $color-primary-green;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            width: 48px;
+            height: 48px;
+        }
+    }
+
+    &__title {
+        font-size: 1.25rem;
+        color: $color-dark-green;
+        margin-bottom: 0.75rem;
+    }
+
+    &__description {
+        font-size: 0.9375rem;
+        color: $color-foreground-light;
+        line-height: 1.6;
+        margin: 0;
+    }
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        pageTitle="Fresh Produce - Greenleaf Organics"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Fresh Produce"
+        cq:template="/conf/greenleaf-organics/settings/wcm/templates/product-listing"
+        sling:resourceType="greenleaf-organics/components/page"
+        isShowInNavigation="{Boolean}true">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="greenleaf-organics/components/container"
+            layout="responsiveGrid">
+            <banner-section
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/container"
+                layout="responsiveGrid">
+                <herobanner
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/custom/herobanner"
+                    backgroundImage="/content/dam/greenleaf-organics/images/hero/fresh-produce-hero.jpg"
+                    heading="Fresh Produce"
+                    subheading="Seasonal fruits and vegetables, harvested at peak ripeness"
+                    overlayOpacity="{Long}35"/>
+            </banner-section>
+            <product-grid
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/title"
+                    jcr:title="Our Fresh Selection"
+                    type="h2"/>
+                <productcard-1
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/custom/productcard"
+                    productImage="/content/dam/greenleaf-organics/images/products/organic-avocados.jpg"
+                    productName="Organic Avocados"
+                    price="$5.99"
+                    badge="Organic"
+                    description="Perfectly ripe Hass avocados grown without synthetic pesticides."
+                    linkURL="/content/greenleaf-organics/us/en/products/fresh-produce"/>
+                <productcard-2
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/custom/productcard"
+                    productImage="/content/dam/greenleaf-organics/images/products/heirloom-tomatoes.jpg"
+                    productName="Heirloom Tomatoes"
+                    price="$4.49"
+                    badge="Local"
+                    description="Vine-ripened heirloom varieties bursting with rich, complex flavor."
+                    linkURL="/content/greenleaf-organics/us/en/products/fresh-produce"/>
+                <productcard-3
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/custom/productcard"
+                    productImage="/content/dam/greenleaf-organics/images/products/baby-spinach.jpg"
+                    productName="Baby Spinach"
+                    price="$3.99"
+                    badge="Organic"
+                    description="Tender, nutrient-packed baby spinach leaves, triple-washed and ready to enjoy."
+                    linkURL="/content/greenleaf-organics/us/en/products/fresh-produce"/>
+            </product-grid>
+        </root>
+    </jcr:content>
+</jcr:root>

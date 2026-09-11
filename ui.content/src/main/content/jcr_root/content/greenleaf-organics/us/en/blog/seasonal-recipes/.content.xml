@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        pageTitle="Seasonal Recipes - Greenleaf Organics"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Seasonal Recipes: Fall Harvest Edition"
+        cq:template="/conf/greenleaf-organics/settings/wcm/templates/blog-article"
+        sling:resourceType="greenleaf-organics/components/page"
+        isShowInNavigation="{Boolean}true">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="greenleaf-organics/components/container"
+            layout="responsiveGrid">
+            <hero-image-section
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/container"
+                layout="responsiveGrid">
+                <image
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/image"
+                    fileReference="/content/dam/greenleaf-organics/images/blog/seasonal-recipes.jpg"
+                    alt="Fall harvest seasonal recipes"/>
+            </hero-image-section>
+            <article-content
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/title"
+                    jcr:title="Seasonal Recipes: Fall Harvest Edition"
+                    type="h1"/>
+                <text-intro
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/text"
+                    text="&lt;p>As the leaves turn golden and the air grows crisp, autumn brings an incredible bounty of organic produce to our tables. Fall is the perfect season to embrace hearty, warming dishes that celebrate the rich flavors of the harvest. From earthy root vegetables to sweet squashes and crisp apples, the ingredients of autumn lend themselves to comforting meals that nourish both body and soul.&lt;/p>&lt;p>At Greenleaf Organics, we source our fall produce from local organic farms that prioritize sustainable growing practices. This means every butternut squash, every bunch of kale, and every basket of heirloom apples is grown without synthetic pesticides or fertilizers — just pure, natural goodness from soil to plate.&lt;/p>"/>
+                <text-recipe-one
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/text"
+                    text="&lt;h2>Roasted Butternut Squash Soup&lt;/h2>&lt;p>This velvety soup is the quintessential fall comfort food. Start by halving a large organic butternut squash and roasting it cut-side down at 400 degrees for 45 minutes until the flesh is tender and caramelized. While the squash roasts, sauté a diced onion and two cloves of garlic in a drizzle of our Extra Virgin Olive Oil until softened. Scoop the roasted squash into the pot, add four cups of vegetable broth, and simmer for 15 minutes. Blend until silky smooth, then finish with a pinch of nutmeg, a swirl of coconut cream, and toasted pumpkin seeds. Serves four and pairs beautifully with crusty sourdough bread.&lt;/p>&lt;h2>Harvest Kale and Apple Salad&lt;/h2>&lt;p>This vibrant salad balances the earthiness of organic lacinato kale with the sweet crunch of fresh apples. Massage a large bunch of kale with lemon juice and olive oil until the leaves are tender and bright green. Toss with thinly sliced organic Honeycrisp apples, toasted walnuts, dried cranberries, and shaved Parmesan. For the dressing, whisk together our Raw Wildflower Honey, apple cider vinegar, Dijon mustard, and a pinch of sea salt. The result is a salad that is satisfying enough to serve as a light meal or a stunning side dish for your fall gatherings.&lt;/p>"/>
+                <text-recipe-two
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/text"
+                    text="&lt;h2>Herb-Roasted Root Vegetables&lt;/h2>&lt;p>Nothing captures the essence of fall like a sheet pan of golden, caramelized root vegetables. Combine cubed organic sweet potatoes, parsnips, carrots, and beets on a large baking sheet. Toss generously with olive oil, fresh rosemary, thyme, and a sprinkle of flaky sea salt. Roast at 425 degrees for 35 to 40 minutes, tossing halfway through, until the edges are crispy and deeply golden. The natural sugars in the root vegetables caramelize beautifully in the oven, creating layers of savory-sweet flavor that make this dish irresistible. Serve alongside roasted chicken or as a hearty vegetarian main with a drizzle of tahini and a squeeze of lemon.&lt;/p>&lt;p>We hope these recipes inspire you to make the most of the fall season's organic bounty. Visit our &lt;a href='/content/greenleaf-organics/us/en/products/fresh-produce'>Fresh Produce&lt;/a> section to find all the seasonal ingredients you need to bring these dishes to life.&lt;/p>"/>
+            </article-content>
+            <related-posts
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/title"
+                    jcr:title="Related Articles"
+                    type="h2"/>
+                <teaser-organic-living
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/teaser"
+                    jcr:title="10 Tips for Organic Living on a Budget"
+                    jcr:description="Discover practical strategies to embrace an organic lifestyle without breaking the bank."
+                    actionsEnabled="false"
+                    linkURL="/content/greenleaf-organics/us/en/blog/organic-living-guide"
+                    fileReference="/content/dam/greenleaf-organics/images/blog/organic-living.jpg"/>
+            </related-posts>
+        </root>
+    </jcr:content>
+</jcr:root>

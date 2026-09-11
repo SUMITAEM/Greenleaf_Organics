@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/greenleaf-organics" mode="merge"/>
+    <filter root="/content/greenleaf-organics" mode="merge"/>
+    <filter root="/content/dam/greenleaf-organics" mode="merge"/>
+    <filter root="/content/experience-fragments/greenleaf-organics" mode="merge"/>
+</workspaceFilter>

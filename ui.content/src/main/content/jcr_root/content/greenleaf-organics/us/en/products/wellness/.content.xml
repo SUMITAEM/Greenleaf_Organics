@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        pageTitle="Wellness Products - Greenleaf Organics"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Wellness"
+        cq:template="/conf/greenleaf-organics/settings/wcm/templates/product-listing"
+        sling:resourceType="greenleaf-organics/components/page"
+        isShowInNavigation="{Boolean}true">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="greenleaf-organics/components/container"
+            layout="responsiveGrid">
+            <banner-section
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/container"
+                layout="responsiveGrid">
+                <herobanner
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/custom/herobanner"
+                    backgroundImage="/content/dam/greenleaf-organics/images/hero/wellness-hero.jpg"
+                    heading="Wellness"
+                    subheading="Natural supplements and superfoods for a healthier you"
+                    overlayOpacity="{Long}35"/>
+            </banner-section>
+            <product-grid
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/title"
+                    jcr:title="Our Wellness Selection"
+                    type="h2"/>
+                <productcard-1
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/custom/productcard"
+                    productImage="/content/dam/greenleaf-organics/images/products/turmeric-supplement.jpg"
+                    productName="Turmeric Supplement"
+                    price="$19.99"
+                    badge="Organic"
+                    description="High-potency turmeric capsules with black pepper extract for enhanced absorption."
+                    linkURL="/content/greenleaf-organics/us/en/products/wellness"/>
+                <productcard-2
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/custom/productcard"
+                    productImage="/content/dam/greenleaf-organics/images/products/spirulina-powder.jpg"
+                    productName="Spirulina Powder"
+                    price="$24.99"
+                    badge="Vegan"
+                    description="Pure blue-green algae powder packed with protein, vitamins, and antioxidants."
+                    linkURL="/content/greenleaf-organics/us/en/products/wellness"/>
+                <productcard-3
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/custom/productcard"
+                    productImage="/content/dam/greenleaf-organics/images/products/elderberry-syrup.jpg"
+                    productName="Elderberry Syrup"
+                    price="$16.99"
+                    badge="Organic"
+                    description="Handcrafted elderberry syrup with raw honey and organic spices for immune support."
+                    linkURL="/content/greenleaf-organics/us/en/products/wellness"/>
+            </product-grid>
+        </root>
+    </jcr:content>
+</jcr:root>

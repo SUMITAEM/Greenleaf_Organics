@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:tags="[]"
+        cq:template="/conf/greenleaf-organics/settings/wcm/templates/xf-web-variation"
+        cq:xfMasterVariation="{Boolean}true"
+        cq:xfVariantType="web"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Header"
+        sling:resourceType="greenleaf-organics/components/xfpage">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="greenleaf-organics/components/container"
+            layout="simple">
+            <image
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/image"
+                fileReference="/content/dam/greenleaf-organics/icons/greenleaf-logo.png"
+                alt="Greenleaf Organics"
+                isDecorative="{Boolean}false"
+                linkURL="/content/greenleaf-organics/us/en"/>
+            <navigation
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/navigation"
+                collectAllPages="false"
+                navigationRoot="/content/greenleaf-organics/us/en"
+                skipNavigationRoot="false"
+                structureDepth="1"/>
+            <search
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/search"
+                searchRoot="/content/greenleaf-organics/us"/>
+        </root>
+    </jcr:content>
+</jcr:root>

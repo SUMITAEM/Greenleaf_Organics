@@ -1,0 +1,6 @@
+{
+  "mobile.resourceTypes": [
+    "greenleaf-organics/components/page"
+  ],
+  "README": "Indicate which page resource types should display the mobile emulators."
+}
