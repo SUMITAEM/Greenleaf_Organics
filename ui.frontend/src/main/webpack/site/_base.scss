@@ -100,7 +100,8 @@ button, input, optgroup, select, textarea {
 //  and forces CSS grid layout, overriding ALL AEM grid rules.
 // =================================================================
 
-.cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 {
+// Scope to page body only — NOT header/footer XFs
+.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 {
     display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 1.5rem !important;
@@ -115,8 +116,7 @@ button, input, optgroup, select, textarea {
     }
 }
 
-// Override EVERY grid column inside a .cmp-container
-.cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .aem-GridColumn.aem-GridColumn--default--12 {
+.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .aem-GridColumn.aem-GridColumn--default--12 {
     float: none !important;
     width: auto !important;
     clear: none !important;
@@ -124,16 +124,16 @@ button, input, optgroup, select, textarea {
     min-height: 0 !important;
 }
 
-// Full-width items: title, newsletter, testimonial, text, form, herobanner
-.cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .title.aem-GridColumn.aem-GridColumn--default--12,
-.cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .newslettersignup.aem-GridColumn.aem-GridColumn--default--12,
-.cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .testimonial.aem-GridColumn.aem-GridColumn--default--12,
-.cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .text.aem-GridColumn.aem-GridColumn--default--12,
-.cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .container.aem-GridColumn.aem-GridColumn--default--12,
-.cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .herobanner.aem-GridColumn.aem-GridColumn--default--12,
-.cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .image.aem-GridColumn.aem-GridColumn--default--12,
-.cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .breadcrumb.aem-GridColumn.aem-GridColumn--default--12,
-.cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .separator.aem-GridColumn.aem-GridColumn--default--12 {
+// Full-width items inside page sections
+.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .title.aem-GridColumn.aem-GridColumn--default--12,
+.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .newslettersignup.aem-GridColumn.aem-GridColumn--default--12,
+.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .testimonial.aem-GridColumn.aem-GridColumn--default--12,
+.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .text.aem-GridColumn.aem-GridColumn--default--12,
+.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .container.aem-GridColumn.aem-GridColumn--default--12,
+.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .herobanner.aem-GridColumn.aem-GridColumn--default--12,
+.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .image.aem-GridColumn.aem-GridColumn--default--12,
+.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .breadcrumb.aem-GridColumn.aem-GridColumn--default--12,
+.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .separator.aem-GridColumn.aem-GridColumn--default--12 {
     grid-column: 1 / -1 !important;
 }
 
