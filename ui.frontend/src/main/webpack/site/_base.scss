@@ -108,19 +108,21 @@ button, input, optgroup, select, textarea {
             grid-template-columns: 1fr;
         }
 
-        // ALL children in this grid: override AEM's float/width
-        > .aem-GridColumn {
+        // Override AEM's .aem-GridColumn.aem-GridColumn--default--12 { width:100% }
+        // Must use same class specificity to win
+        > .aem-GridColumn.aem-GridColumn--default--12 {
             float: none !important;
             width: auto !important;
             clear: none !important;
             padding: 0 !important;
+            min-height: 0 !important;
         }
 
         // Title, newsletter, testimonial, text — span full row
-        > .title.aem-GridColumn,
-        > .newslettersignup.aem-GridColumn,
-        > .testimonial.aem-GridColumn,
-        > .text.aem-GridColumn {
+        > .title.aem-GridColumn--default--12,
+        > .newslettersignup.aem-GridColumn--default--12,
+        > .testimonial.aem-GridColumn--default--12,
+        > .text.aem-GridColumn--default--12 {
             grid-column: 1 / -1;
         }
     }
