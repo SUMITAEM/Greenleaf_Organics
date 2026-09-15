@@ -6,7 +6,8 @@
     box-shadow: $box-shadow;
     text-decoration: none;
     transition: $transition;
-    height: 100%;
+    max-width: 280px;
+    margin: 0 auto;
 
     &:hover {
         transform: translateY(-4px);
@@ -16,7 +17,7 @@
 
     &__image-wrapper {
         overflow: hidden;
-        aspect-ratio: 3 / 2;
+        height: 160px;
         background: $color-background-green;
     }
 
@@ -32,11 +33,12 @@
     }
 
     &__name {
-        padding: 1rem 1.25rem;
+        padding: 0.75rem 1rem;
         margin: 0;
         text-align: center;
         color: $color-dark-green;
-        font-size: 1.125rem;
+        font-size: 1rem;
+        font-weight: 600;
         transition: $transition;
     }
 

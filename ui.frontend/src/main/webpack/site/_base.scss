@@ -96,9 +96,17 @@ button, input, optgroup, select, textarea {
     // The inner .aem-Grid holds cards — make it a CSS grid
     > .aem-Grid.aem-Grid--12 {
         display: grid !important;
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        grid-template-columns: repeat(4, 1fr);
         gap: 1.5rem;
         width: 100%;
+
+        @media (max-width: $bp-tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: $bp-mobile) {
+            grid-template-columns: 1fr;
+        }
 
         // ALL children in this grid: override AEM's float/width
         > .aem-GridColumn {
@@ -108,13 +116,11 @@ button, input, optgroup, select, textarea {
             padding: 0 !important;
         }
 
-        // Title spans full row
-        > .title.aem-GridColumn {
-            grid-column: 1 / -1;
-        }
-
-        // Newsletter spans full row
-        > .newslettersignup.aem-GridColumn {
+        // Title, newsletter, testimonial, text — span full row
+        > .title.aem-GridColumn,
+        > .newslettersignup.aem-GridColumn,
+        > .testimonial.aem-GridColumn,
+        > .text.aem-GridColumn {
             grid-column: 1 / -1;
         }
     }
