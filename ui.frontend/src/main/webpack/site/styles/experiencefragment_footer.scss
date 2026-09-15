@@ -1,17 +1,5 @@
 
 //== Footer Experience Fragment
-//
-//   Actual AEM DOM (from curl):
-//   footer.experiencefragment
-//     > .container > .root.container.responsivegrid
-//       > .cmp-container > .aem-Grid
-//         > .container.responsivegrid.aem-GridColumn  (3-col wrapper)
-//           > .cmp-container > .aem-Grid
-//             > .text.aem-GridColumn  (about)
-//             > .text.aem-GridColumn  (links)
-//             > .text.aem-GridColumn  (contact)
-//         > .separator.aem-GridColumn
-//         > .text.aem-GridColumn  (copyright)
 
 footer.experiencefragment {
     background: $color-dark-green;
@@ -19,7 +7,7 @@ footer.experiencefragment {
     padding: 0 !important;
     margin-top: 2rem;
 
-    // ── Override global base resets for all footer grids ──
+    // ── Reset all AEM grid inside footer ──
     .aem-Grid {
         display: block !important;
         max-width: $max-width;
@@ -33,12 +21,12 @@ footer.experiencefragment {
         padding: 0 !important;
     }
 
-    // ── THE 3-COLUMN GRID ──
-    // Target: the inner .cmp-container inside the .container.responsivegrid
-    // Its .aem-Grid holds 3 text components that need to be side-by-side
+    // ── 3-COLUMN GRID ──
+    // The inner container's .aem-Grid wraps 3 .text columns.
+    // Force CSS grid and override EVERY width rule on children.
     .container.responsivegrid .cmp-container > .aem-Grid {
         display: grid !important;
-        grid-template-columns: 2fr 1fr 1.5fr;
+        grid-template-columns: 1.5fr 1fr 1.5fr;
         gap: 2.5rem;
         padding-top: 3rem;
         padding-bottom: 2rem;
@@ -50,9 +38,13 @@ footer.experiencefragment {
             padding-bottom: 1.5rem;
         }
 
-        // Each .text column must NOT be full-width
-        > .aem-GridColumn {
+        // Override AEM's .aem-GridColumn--default--12 { width: 100% }
+        > .aem-GridColumn,
+        > .aem-GridColumn[class*="aem-GridColumn--default"] {
             width: auto !important;
+            max-width: none !important;
+            float: none !important;
+            min-height: 0 !important;
         }
     }
 
@@ -93,9 +85,7 @@ footer.experiencefragment {
                 padding: 0.125rem 0;
                 transition: padding-left 0.2s ease;
 
-                &:hover {
-                    padding-left: 4px;
-                }
+                &:hover { padding-left: 4px; }
             }
         }
     }
