@@ -71,9 +71,7 @@ textarea {
 }
 
 // =================================================================
-//  AEM RESPONSIVE GRID - FORCE FULL-WIDTH STACKING
-//  This is the #1 fix: AEM floats grid columns side-by-side.
-//  We need every top-level section to be a full-width block row.
+//  AEM RESPONSIVE GRID - FULL-WIDTH STACKING
 // =================================================================
 
 .aem-Grid {
@@ -95,7 +93,7 @@ textarea {
 }
 
 // =================================================================
-//  PAGE SECTIONS - Centered content with spacing
+//  PAGE SECTIONS
 // =================================================================
 
 .root.responsivegrid > .aem-Grid > .aem-GridColumn {
@@ -104,42 +102,53 @@ textarea {
         margin: 0 auto;
         padding: 3rem $gutter;
 
-        // Section title
         > .aem-Grid > .aem-GridColumn > .cmp-title {
             text-align: center;
             margin-bottom: 2rem;
         }
 
-        // Card grid inside sections
+        // Card grid layout
         > .aem-Grid {
             display: grid !important;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 1.5rem;
-
-            > .aem-GridColumn {
-                float: none !important;
-                width: auto !important;
-            }
         }
     }
 }
 
-// Title-only grid columns should span full width
-.cmp-title {
-    grid-column: 1 / -1;
-    text-align: center;
+// =================================================================
+//  CARD GRID COLUMNS - Override AEM's high-specificity grid width
+//  AEM uses: .aem-Grid.aem-Grid--12 > .aem-GridColumn.aem-GridColumn--default--12 { width:100% }
+//  We must match or exceed that specificity for card wrappers.
+// =================================================================
 
-    &__text {
-        color: $color-dark-green;
-    }
+// Category cards, product cards, testimonials, feature grids — in any grid context
+.aem-Grid.aem-Grid--12 > .categorycard.aem-GridColumn.aem-GridColumn--default--12,
+.aem-Grid.aem-Grid--default--12 > .categorycard.aem-GridColumn.aem-GridColumn--default--12,
+.aem-Grid.aem-Grid--12 > .productcard.aem-GridColumn.aem-GridColumn--default--12,
+.aem-Grid.aem-Grid--default--12 > .productcard.aem-GridColumn.aem-GridColumn--default--12,
+.aem-Grid.aem-Grid--12 > .testimonial.aem-GridColumn.aem-GridColumn--default--12,
+.aem-Grid.aem-Grid--default--12 > .testimonial.aem-GridColumn.aem-GridColumn--default--12,
+.aem-Grid.aem-Grid--12 > .featuregrid.aem-GridColumn.aem-GridColumn--default--12,
+.aem-Grid.aem-Grid--default--12 > .featuregrid.aem-GridColumn.aem-GridColumn--default--12,
+.aem-Grid.aem-Grid--12 > .newslettersignup.aem-GridColumn.aem-GridColumn--default--12,
+.aem-Grid.aem-Grid--default--12 > .newslettersignup.aem-GridColumn.aem-GridColumn--default--12 {
+    width: auto !important;
+    float: none !important;
+    clear: none !important;
 }
 
-//== Section alternating backgrounds
+// Title spans full width in grids
+.aem-Grid.aem-Grid--12 > .title.aem-GridColumn.aem-GridColumn--default--12,
+.aem-Grid.aem-Grid--default--12 > .title.aem-GridColumn.aem-GridColumn--default--12 {
+    grid-column: 1 / -1;
+}
+
+// Section alternating backgrounds
 .root.responsivegrid > .aem-Grid > .aem-GridColumn {
     &:nth-child(even) {
         background: $color-background-green;
     }
-    // Header and footer XFs: no background
     &:first-child,
     &:last-child {
         background: transparent !important;
@@ -150,18 +159,22 @@ textarea {
 //  CORE COMPONENT STYLES
 // =================================================================
 
-//== Text component
+.cmp-title {
+    text-align: center;
+
+    &__text {
+        color: $color-dark-green;
+    }
+}
+
 .cmp-text {
     line-height: 1.7;
 }
 
-//== Image component
-.cmp-image {
-    &__image {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
+.cmp-image__image {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 //== Breadcrumb
@@ -185,13 +198,9 @@ textarea {
         color: $color-foreground-light;
     }
 
-    &__item:last-child::after {
-        display: none;
-    }
+    &__item:last-child::after { display: none; }
 
-    &__item-link {
-        color: $color-primary-green;
-    }
+    &__item-link { color: $color-primary-green; }
 }
 
 //== Teaser
@@ -212,14 +221,11 @@ textarea {
         object-fit: cover;
     }
 
-    &__content {
-        padding: 1.25rem;
-    }
+    &__content { padding: 1.25rem; }
 
     &__title {
         color: $color-dark-green;
         margin-bottom: 0.5rem;
-
         a { color: inherit; text-decoration: none; &:hover { color: $color-primary-green; } }
     }
 
@@ -237,7 +243,7 @@ textarea {
     margin: 2rem 0;
 }
 
-//== Form styles
+//== Forms
 .cmp-form-text {
     margin-bottom: 1rem;
     grid-column: 1 / -1;
