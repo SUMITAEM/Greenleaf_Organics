@@ -19,7 +19,7 @@
                 <image
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/image"
-                    fileReference="/content/dam/greenleaf-organics/images/blog/organic-living.jpg"
+                    fileReference="/content/dam/greenleaf-organics/images/blog/katie-smith-uQs1802D0CQ-unsplash.jpg"
                     alt="Organic living"/>
             </hero-image-section>
             <article-content
@@ -60,7 +60,7 @@
                     jcr:description="Celebrate the bounty of autumn with wholesome recipes featuring seasonal organic produce."
                     actionsEnabled="false"
                     linkURL="/content/greenleaf-organics/us/en/blog/seasonal-recipes"
-                    fileReference="/content/dam/greenleaf-organics/images/blog/seasonal-recipes.jpg"/>
+                    fileReference="/content/dam/greenleaf-organics/images/blog/adam-bartoszewicz-tBfFFup9G5g-unsplash.jpg"/>
             </related-posts>
         </root>
     </jcr:content>
