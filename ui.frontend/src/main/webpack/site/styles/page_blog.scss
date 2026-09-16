@@ -1,0 +1,53 @@
+
+//== Blog Article Pages
+//   Readable content layout for long-form text
+
+// Article hero image — full-width, no border radius
+.root.responsivegrid .cmp-container > .aem-Grid > .container > .cmp-container > .aem-Grid > .container {
+    .cmp-image__image {
+        border-radius: 0;
+        max-height: 500px;
+        object-fit: cover;
+    }
+}
+
+// Article text content — centered and readable
+.cmp-text {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+
+    h2 {
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid $color-background-green;
+    }
+
+    h3 {
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    p {
+        margin-bottom: 1.25rem;
+        line-height: 1.8;
+    }
+
+    ul, ol {
+        margin-bottom: 1.25rem;
+        padding-left: 1.5rem;
+
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+    }
+}
+
+// Title component — centered with readable width
+.cmp-title {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        pageTitle="Herbal Kombucha - Greenleaf Organics"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Herbal Kombucha"
+        cq:template="/conf/greenleaf-organics/settings/wcm/templates/product-detail"
+        sling:resourceType="greenleaf-organics/components/page"
+        hideInNav="{Boolean}true">
+        <root jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+            <container jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                <product-image-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <image jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/image" fileReference="/content/dam/greenleaf-organics/images/products/herbal-kombucha.jpg" alt="Herbal Kombucha"/>
+                </product-image-section>
+                <product-info-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <title jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/title" jcr:title="Herbal Kombucha" type="h1"/>
+                    <text jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/text" textIsRich="true"
+                        text="&lt;p class=&quot;product-price&quot;&gt;$4.99&lt;/p&gt;&lt;p class=&quot;product-badge&quot;&gt;100% Vegan&lt;/p&gt;&lt;p&gt;Naturally fermented kombucha with lavender and chamomile for a calming, probiotic-rich drink. Brewed in small batches using organic green tea and a traditional SCOBY culture, then infused with hand-harvested dried herbs.&lt;/p&gt;&lt;p&gt;The gentle fizz and delicate floral notes make this a perfect afternoon refresher or evening wind-down drink. Each bottle contains billions of live probiotics to support digestive health and immune function.&lt;/p&gt;"/>
+                </product-info-section>
+                <nutrition-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <title jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/title" jcr:title="Product Details" type="h2"/>
+                    <text jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/text" textIsRich="true"
+                        text="&lt;h3&gt;Nutrition Facts (per bottle, 16 oz)&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Calories: 35&lt;/li&gt;&lt;li&gt;Sugar: 4g (naturally occurring)&lt;/li&gt;&lt;li&gt;Probiotics: 2 billion CFU&lt;/li&gt;&lt;li&gt;Organic acids and B vitamins&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;Ingredients&lt;/h3&gt;&lt;p&gt;Filtered water, organic green tea, organic cane sugar (consumed during fermentation), live kombucha culture, organic lavender flowers, organic chamomile flowers. Naturally effervescent. Keep refrigerated.&lt;/p&gt;"/>
+                </nutrition-section>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

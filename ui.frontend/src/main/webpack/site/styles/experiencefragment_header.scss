@@ -84,11 +84,20 @@ header.experiencefragment {
         align-items: center;
     }
 
-    // Level-0 items: position relative so dropdown anchors here
+    // Level-0 (root "Home" item): flatten so its children sit in the same row
     .cmp-navigation__item--level-0 {
+        display: contents;
+
+        > .cmp-navigation__group {
+            display: contents;
+        }
+    }
+
+    // Level-1 items: these are the visible nav bar items (Home, Products, About, etc.)
+    .cmp-navigation__item--level-1 {
         position: relative;
 
-        // ── Dropdown: nested group hidden by default ──
+        // ── Dropdown for subcategories ──
         > .cmp-navigation__group {
             display: none;
             position: absolute;
@@ -105,7 +114,6 @@ header.experiencefragment {
             flex-direction: column;
             gap: 0;
 
-            // Dropdown items: vertical stack
             .cmp-navigation__item {
                 width: 100%;
             }
@@ -123,7 +131,6 @@ header.experiencefragment {
             }
         }
 
-        // ── Show dropdown on hover ──
         &:hover > .cmp-navigation__group {
             display: flex;
         }
@@ -152,7 +159,7 @@ header.experiencefragment {
     }
 
     // ── Dropdown arrow indicator for items with children ──
-    .cmp-navigation__item--level-0:has(> .cmp-navigation__group) {
+    .cmp-navigation__item--level-1:has(> .cmp-navigation__group) {
         > .cmp-navigation__item-link::after {
             content: '';
             display: inline-block;
@@ -166,7 +173,8 @@ header.experiencefragment {
             transition: transform 0.2s ease;
         }
 
-        &:hover > .cmp-navigation__item-link::after {
+        &:hover > .cmp-navigation__item-link::after,
+        &:focus-within > .cmp-navigation__item-link::after {
             transform: rotate(180deg);
         }
     }
@@ -204,5 +212,11 @@ header.experiencefragment {
 
     .cmp-search__icon {
         display: none;
+    }
+
+    // ── Cart icon wrapper (rendered via text component) ──
+    .text:last-child .cmp-text {
+        margin: 0;
+        max-width: none;
     }
 }

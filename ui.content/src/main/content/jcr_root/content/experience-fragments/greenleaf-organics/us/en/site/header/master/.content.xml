@@ -25,12 +25,17 @@
                 sling:resourceType="greenleaf-organics/components/navigation"
                 collectAllPages="false"
                 navigationRoot="/content/greenleaf-organics/us/en"
-                skipNavigationRoot="false"
+                skipNavigationRoot="{Boolean}false"
                 structureDepth="2"/>
             <search
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="greenleaf-organics/components/search"
                 searchRoot="/content/greenleaf-organics/us"/>
+            <cart
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/text"
+                textIsRich="true"
+                text="&lt;div class=&quot;header-cart&quot; id=&quot;header-cart&quot;&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;circle cx=&quot;9&quot; cy=&quot;21&quot; r=&quot;1&quot;/&gt;&lt;circle cx=&quot;20&quot; cy=&quot;21&quot; r=&quot;1&quot;/&gt;&lt;path d=&quot;M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6&quot;/&gt;&lt;/svg&gt;&lt;span class=&quot;header-cart__count&quot; id=&quot;cart-count&quot;&gt;0&lt;/span&gt;&lt;/div&gt;"/>
         </root>
     </jcr:content>
 </jcr:root>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        pageTitle="Raw Wildflower Honey - Greenleaf Organics"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Raw Wildflower Honey"
+        cq:template="/conf/greenleaf-organics/settings/wcm/templates/product-detail"
+        sling:resourceType="greenleaf-organics/components/page"
+        hideInNav="{Boolean}true">
+        <root jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+            <container jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                <product-image-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <image jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/image" fileReference="/content/dam/greenleaf-organics/images/products/raw-honey.jpg" alt="Raw Wildflower Honey"/>
+                </product-image-section>
+                <product-info-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <title jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/title" jcr:title="Raw Wildflower Honey" type="h1"/>
+                    <text jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/text" textIsRich="true"
+                        text="&lt;p class=&quot;product-price&quot;&gt;$12.99&lt;/p&gt;&lt;p class=&quot;product-badge&quot;&gt;Locally Sourced&lt;/p&gt;&lt;p&gt;Unfiltered, unheated honey from local wildflower meadows. This raw honey is harvested from hives surrounded by diverse wildflowers, giving it a complex, floral sweetness that varies beautifully with each season.&lt;/p&gt;&lt;p&gt;Unlike commercial honey, our raw wildflower honey retains all of its natural enzymes, pollen, and beneficial compounds. It is never heated above hive temperature and never micro-filtered, preserving the full spectrum of nutrients and authentic flavor.&lt;/p&gt;"/>
+                </product-info-section>
+                <nutrition-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <title jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/title" jcr:title="Product Details" type="h2"/>
+                    <text jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/text" textIsRich="true"
+                        text="&lt;h3&gt;Nutrition Facts (per tablespoon)&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Calories: 64&lt;/li&gt;&lt;li&gt;Total Sugars: 17g&lt;/li&gt;&lt;li&gt;Contains natural enzymes and antioxidants&lt;/li&gt;&lt;li&gt;Rich in trace minerals&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;Storage&lt;/h3&gt;&lt;p&gt;Store at room temperature. Crystallization is natural and a sign of purity — gently warm the jar in warm water to re-liquefy. Do not microwave. Shelf life: indefinite when stored properly.&lt;/p&gt;"/>
+                </nutrition-section>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

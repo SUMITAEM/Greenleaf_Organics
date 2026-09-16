@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        pageTitle="Organic Avocados - Greenleaf Organics"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Organic Avocados"
+        cq:template="/conf/greenleaf-organics/settings/wcm/templates/product-detail"
+        sling:resourceType="greenleaf-organics/components/page"
+        hideInNav="{Boolean}true">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="greenleaf-organics/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/container"
+                layout="responsiveGrid">
+                <product-image-section
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/container"
+                    layout="responsiveGrid">
+                    <image
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/image"
+                        fileReference="/content/dam/greenleaf-organics/images/products/organic-avocados.jpg"
+                        alt="Organic Avocados"/>
+                </product-image-section>
+                <product-info-section
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/container"
+                    layout="responsiveGrid">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/title"
+                        jcr:title="Organic Avocados"
+                        type="h1"/>
+                    <text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/text"
+                        textIsRich="true"
+                        text="&lt;p class=&quot;product-price&quot;&gt;$5.99&lt;/p&gt;&lt;p class=&quot;product-badge&quot;&gt;Certified Organic&lt;/p&gt;&lt;p&gt;Perfectly ripe Hass avocados grown without synthetic pesticides. Our avocados are hand-selected from certified organic farms in California and Mexico, ensuring each one arrives at peak ripeness with a rich, creamy texture and buttery flavor.&lt;/p&gt;&lt;p&gt;Each avocado is carefully inspected for quality and ripeness before being shipped. Whether you are making guacamole, adding slices to your morning toast, or blending into a smoothie, our organic avocados deliver exceptional taste and nutrition.&lt;/p&gt;"/>
+                </product-info-section>
+                <nutrition-section
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/container"
+                    layout="responsiveGrid">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/title"
+                        jcr:title="Product Details"
+                        type="h2"/>
+                    <text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/text"
+                        textIsRich="true"
+                        text="&lt;h3&gt;Nutrition Facts (per avocado)&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Calories: 240&lt;/li&gt;&lt;li&gt;Total Fat: 22g&lt;/li&gt;&lt;li&gt;Fiber: 10g&lt;/li&gt;&lt;li&gt;Potassium: 708mg&lt;/li&gt;&lt;li&gt;Vitamin K: 26% DV&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;Storage&lt;/h3&gt;&lt;p&gt;Store at room temperature until ripe. Once ripe, refrigerate for up to 3 days. Cut avocados should be stored with the pit and a squeeze of lemon juice to prevent browning.&lt;/p&gt;"/>
+                </nutrition-section>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

@@ -7,11 +7,16 @@
         jcr:title="Fresh Produce"
         cq:template="/conf/greenleaf-organics/settings/wcm/templates/product-listing"
         sling:resourceType="greenleaf-organics/components/page"
+        navTitle="Fresh Produce"
         isShowInNavigation="{Boolean}true">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="greenleaf-organics/components/container"
             layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/container"
+                layout="responsiveGrid">
             <banner-section
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="greenleaf-organics/components/container"
@@ -41,7 +46,7 @@
                     price="$5.99"
                     badge="Organic"
                     description="Perfectly ripe Hass avocados grown without synthetic pesticides."
-                    linkURL="/content/greenleaf-organics/us/en/products/fresh-produce"/>
+                    linkURL="/content/greenleaf-organics/us/en/products/fresh-produce/organic-avocados"/>
                 <productcard-2
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/custom/productcard"
@@ -50,7 +55,7 @@
                     price="$4.49"
                     badge="Local"
                     description="Vine-ripened heirloom varieties bursting with rich, complex flavor."
-                    linkURL="/content/greenleaf-organics/us/en/products/fresh-produce"/>
+                    linkURL="/content/greenleaf-organics/us/en/products/fresh-produce/heirloom-tomatoes"/>
                 <productcard-3
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/custom/productcard"
@@ -59,8 +64,9 @@
                     price="$3.99"
                     badge="Organic"
                     description="Tender, nutrient-packed baby spinach leaves, triple-washed and ready to enjoy."
-                    linkURL="/content/greenleaf-organics/us/en/products/fresh-produce"/>
+                    linkURL="/content/greenleaf-organics/us/en/products/fresh-produce/baby-spinach"/>
             </product-grid>
+            </container>
         </root>
     </jcr:content>
 </jcr:root>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        pageTitle="Extra Virgin Olive Oil - Greenleaf Organics"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Extra Virgin Olive Oil"
+        cq:template="/conf/greenleaf-organics/settings/wcm/templates/product-detail"
+        sling:resourceType="greenleaf-organics/components/page"
+        hideInNav="{Boolean}true">
+        <root jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+            <container jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                <product-image-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <image jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/image" fileReference="/content/dam/greenleaf-organics/images/products/extra-virgin-olive-oil.jpg" alt="Extra Virgin Olive Oil"/>
+                </product-image-section>
+                <product-info-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <title jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/title" jcr:title="Extra Virgin Olive Oil" type="h1"/>
+                    <text jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/text" textIsRich="true"
+                        text="&lt;p class=&quot;product-price&quot;&gt;$14.99&lt;/p&gt;&lt;p class=&quot;product-badge&quot;&gt;Certified Organic&lt;/p&gt;&lt;p&gt;Cold-pressed from organically grown olives for a smooth, peppery finish. Our extra virgin olive oil is made from a single harvest of hand-picked olives, pressed within hours of picking to capture the freshest, most vibrant flavor.&lt;/p&gt;&lt;p&gt;This premium oil has a beautiful golden-green color with notes of fresh herbs, artichoke, and a pleasant peppery bite on the finish. Ideal for drizzling over salads, finishing dishes, dipping bread, or any preparation where the oil is the star.&lt;/p&gt;"/>
+                </product-info-section>
+                <nutrition-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <title jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/title" jcr:title="Product Details" type="h2"/>
+                    <text jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/text" textIsRich="true"
+                        text="&lt;h3&gt;Nutrition Facts (per tablespoon)&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Calories: 120&lt;/li&gt;&lt;li&gt;Total Fat: 14g&lt;/li&gt;&lt;li&gt;Monounsaturated Fat: 10g&lt;/li&gt;&lt;li&gt;Vitamin E: 13% DV&lt;/li&gt;&lt;li&gt;Rich in polyphenols and antioxidants&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;Storage&lt;/h3&gt;&lt;p&gt;Store in a cool, dark place away from heat and light. Best used within 12 months of opening. Do not refrigerate. The bottle is made from dark glass to protect the oil from light degradation.&lt;/p&gt;"/>
+                </nutrition-section>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

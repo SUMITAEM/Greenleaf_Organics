@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        pageTitle="Baby Spinach - Greenleaf Organics"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Baby Spinach"
+        cq:template="/conf/greenleaf-organics/settings/wcm/templates/product-detail"
+        sling:resourceType="greenleaf-organics/components/page"
+        hideInNav="{Boolean}true">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="greenleaf-organics/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/container"
+                layout="responsiveGrid">
+                <product-image-section
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/container"
+                    layout="responsiveGrid">
+                    <image
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/image"
+                        fileReference="/content/dam/greenleaf-organics/images/products/baby-spinach.jpg"
+                        alt="Baby Spinach"/>
+                </product-image-section>
+                <product-info-section
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/container"
+                    layout="responsiveGrid">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/title"
+                        jcr:title="Baby Spinach"
+                        type="h1"/>
+                    <text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/text"
+                        textIsRich="true"
+                        text="&lt;p class=&quot;product-price&quot;&gt;$3.99&lt;/p&gt;&lt;p class=&quot;product-badge&quot;&gt;Certified Organic&lt;/p&gt;&lt;p&gt;Tender, nutrient-packed baby spinach leaves, triple-washed and ready to enjoy. Harvested young for a mild, sweet flavor and silky texture that works beautifully in both raw and cooked dishes.&lt;/p&gt;&lt;p&gt;Our baby spinach is grown in rich, organic soil without synthetic pesticides or fertilizers. Each batch is triple-washed and carefully inspected before packaging, so it is ready to eat straight from the container. Add to smoothies, salads, pasta, omelets, or sautee as a nutritious side dish.&lt;/p&gt;"/>
+                </product-info-section>
+                <nutrition-section
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/container"
+                    layout="responsiveGrid">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/title"
+                        jcr:title="Product Details"
+                        type="h2"/>
+                    <text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/text"
+                        textIsRich="true"
+                        text="&lt;h3&gt;Nutrition Facts (per 100g)&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Calories: 23&lt;/li&gt;&lt;li&gt;Iron: 15% DV&lt;/li&gt;&lt;li&gt;Vitamin A: 188% DV&lt;/li&gt;&lt;li&gt;Vitamin K: 604% DV&lt;/li&gt;&lt;li&gt;Folate: 49% DV&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;Storage&lt;/h3&gt;&lt;p&gt;Keep refrigerated at 34-38 degrees F. Best consumed within 5-7 days of purchase. Store in original container or a breathable bag to maintain freshness.&lt;/p&gt;"/>
+                </nutrition-section>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

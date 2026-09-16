@@ -7,6 +7,7 @@
         jcr:title="Contact"
         cq:template="/conf/greenleaf-organics/settings/wcm/templates/contact-page"
         sling:resourceType="greenleaf-organics/components/page"
+        navTitle="Contact"
         isShowInNavigation="{Boolean}true">
         <root
             jcr:primaryType="nt:unstructured"

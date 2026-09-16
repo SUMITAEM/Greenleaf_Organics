@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        pageTitle="Cold Brew Coffee - Greenleaf Organics"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Cold Brew Coffee"
+        cq:template="/conf/greenleaf-organics/settings/wcm/templates/product-detail"
+        sling:resourceType="greenleaf-organics/components/page"
+        hideInNav="{Boolean}true">
+        <root jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+            <container jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                <product-image-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <image jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/image" fileReference="/content/dam/greenleaf-organics/images/products/cold-brew-coffee.jpg" alt="Cold Brew Coffee"/>
+                </product-image-section>
+                <product-info-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <title jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/title" jcr:title="Cold Brew Coffee" type="h1"/>
+                    <text jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/text" textIsRich="true"
+                        text="&lt;p class=&quot;product-price&quot;&gt;$6.99&lt;/p&gt;&lt;p class=&quot;product-badge&quot;&gt;Certified Organic&lt;/p&gt;&lt;p&gt;Slow-steeped for 18 hours using single-origin organic beans for a smooth, bold taste. Our cold brew process extracts the rich, chocolatey flavors of the coffee while leaving behind the bitterness and acidity of traditional hot brewing.&lt;/p&gt;&lt;p&gt;Made with shade-grown, fair-trade organic coffee beans from small-batch roasters. Each bottle delivers a clean caffeine boost with naturally sweet undertones of dark chocolate and caramel.&lt;/p&gt;"/>
+                </product-info-section>
+                <nutrition-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <title jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/title" jcr:title="Product Details" type="h2"/>
+                    <text jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/text" textIsRich="true"
+                        text="&lt;h3&gt;Nutrition Facts (per bottle, 12 oz)&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Calories: 5&lt;/li&gt;&lt;li&gt;Caffeine: 200mg&lt;/li&gt;&lt;li&gt;Sugar: 0g&lt;/li&gt;&lt;li&gt;No artificial sweeteners or flavors&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;Serving Suggestions&lt;/h3&gt;&lt;p&gt;Enjoy straight from the bottle over ice, or mix with your favorite milk or creamer. Try adding a splash of oat milk and a touch of vanilla for a naturally sweet latte. Keep refrigerated and consume within 7 days of opening.&lt;/p&gt;"/>
+                </nutrition-section>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

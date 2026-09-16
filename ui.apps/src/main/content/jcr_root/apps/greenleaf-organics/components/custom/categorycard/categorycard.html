@@ -1,4 +1,4 @@
-<a class="cmp-categorycard" href="${properties.linkURL @ context='uri'}" data-sly-test="${properties.categoryName && properties.linkURL}">
+<a class="cmp-categorycard" href="${'{0}.html' @ format=properties.linkURL, context='uri'}" data-sly-test="${properties.categoryName && properties.linkURL}">
     <div class="cmp-categorycard__image-wrapper">
         <img class="cmp-categorycard__image" src="${properties.categoryImage @ context='uri'}" alt="${properties.categoryName}" data-sly-test="${properties.categoryImage}"/>
     </div>

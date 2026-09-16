@@ -12,6 +12,10 @@
             jcr:primaryType="nt:unstructured"
             sling:resourceType="greenleaf-organics/components/container"
             layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/container"
+                layout="responsiveGrid">
             <hero-image-section
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="greenleaf-organics/components/container"
@@ -19,7 +23,7 @@
                 <image
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/image"
-                    fileReference="/content/dam/greenleaf-organics/images/blog/adam-bartoszewicz-tBfFFup9G5g-unsplash.jpg"
+                    fileReference="/content/dam/greenleaf-organics/images/blog/seasonal-recipes.jpg"
                     alt="Fall harvest seasonal recipes"/>
             </hero-image-section>
             <article-content
@@ -60,8 +64,9 @@
                     jcr:description="Discover practical strategies to embrace an organic lifestyle without breaking the bank."
                     actionsEnabled="false"
                     linkURL="/content/greenleaf-organics/us/en/blog/organic-living-guide"
-                    fileReference="/content/dam/greenleaf-organics/images/blog/katie-smith-uQs1802D0CQ-unsplash.jpg"/>
+                    fileReference="/content/dam/greenleaf-organics/images/blog/organic-living.jpg"/>
             </related-posts>
+            </container>
         </root>
     </jcr:content>
 </jcr:root>

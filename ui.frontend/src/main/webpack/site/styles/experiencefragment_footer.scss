@@ -7,45 +7,76 @@ footer.experiencefragment {
     padding: 0 !important;
     margin-top: 2rem;
 
-    // ── Reset all AEM grid inside footer ──
-    .aem-Grid {
-        display: block !important;
+    // ── Center content wrapper ──
+    > .cmp-experiencefragment {
         max-width: $max-width;
         margin: 0 auto;
-        padding: 0 $gutter;
+        padding: 3rem $gutter 0;
     }
 
-    .aem-GridColumn {
-        float: none !important;
-        width: 100% !important;
-        padding: 0 !important;
-    }
-
-    // ── 3-COLUMN GRID ──
-    // The inner container's .aem-Grid wraps 3 .text columns.
-    // Force CSS grid and override EVERY width rule on children.
-    .container.responsivegrid .cmp-container > .aem-Grid {
+    // ── Override ALL AEM grid/float layout inside footer ──
+    // Uses .cmp-experiencefragment for extra specificity to beat _base.scss
+    .cmp-experiencefragment .aem-Grid,
+    .cmp-experiencefragment .aem-Grid.aem-Grid--12,
+    .cmp-experiencefragment .aem-Grid.aem-Grid--12.aem-Grid--default--12 {
         display: grid !important;
-        grid-template-columns: 1.5fr 1fr 1.5fr;
-        gap: 2.5rem;
-        padding-top: 3rem;
-        padding-bottom: 2rem;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 2rem !important;
+        width: 100% !important;
+        max-width: none !important;
+        float: none !important;
+        padding: 0 !important;
 
         @media (max-width: $bp-mobile) {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            padding-top: 2rem;
-            padding-bottom: 1.5rem;
+            grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
         }
+    }
 
-        // Override AEM's .aem-GridColumn--default--12 { width: 100% }
-        > .aem-GridColumn,
-        > .aem-GridColumn[class*="aem-GridColumn--default"] {
-            width: auto !important;
-            max-width: none !important;
-            float: none !important;
-            min-height: 0 !important;
-        }
+    // ── Reset ALL grid-column sizing on children ──
+    .cmp-experiencefragment .aem-GridColumn,
+    .cmp-experiencefragment .aem-GridColumn[class*="aem-GridColumn--default"] {
+        float: none !important;
+        width: auto !important;
+        max-width: none !important;
+        padding: 0 !important;
+        min-height: 0 !important;
+        clear: none !important;
+        grid-column: auto !important;
+    }
+
+    // ── Flatten ALL wrappers ──
+    // Make every non-content element invisible to layout so only
+    // .text and .separator participate as grid items.
+    .cmp-experiencefragment .aem-GridColumn:not(.text):not(.separator),
+    .cmp-experiencefragment .container.responsivegrid > .cmp-container,
+    .cmp-experiencefragment .container.responsivegrid .aem-Grid,
+    .cmp-experiencefragment .cmp-container > .container.responsivegrid {
+        display: contents !important;
+    }
+
+    // Separator always spans full width
+    .cmp-experiencefragment .separator,
+    .cmp-experiencefragment .separator.aem-GridColumn {
+        grid-column: 1 / -1 !important;
+    }
+
+    // Copyright = any text block that follows the separator
+    .cmp-experiencefragment .separator ~ .text,
+    .cmp-experiencefragment .separator ~ .text.aem-GridColumn {
+        grid-column: 1 / -1 !important;
+    }
+
+    // ── Reset nested containers ──
+    .cmp-experiencefragment .cmp-container {
+        max-width: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .cmp-experiencefragment .container.responsivegrid {
+        width: 100% !important;
+        padding: 0 !important;
     }
 
     // ── Typography ──
@@ -102,8 +133,8 @@ footer.experiencefragment {
         border-top: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    // ── Copyright ──
-    > .container > .root > .cmp-container > .aem-Grid > .text:last-child .cmp-text {
+    // ── Copyright bar ──
+    .separator ~ .text .cmp-text {
         padding: 1.25rem 0;
         text-align: center;
         font-size: 0.875rem;

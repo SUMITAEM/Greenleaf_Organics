@@ -8,6 +8,13 @@
         <h3 class="cmp-productcard__name">${model.productName}</h3>
         <p class="cmp-productcard__price" data-sly-test="${model.price}">${model.price}</p>
         <p class="cmp-productcard__description" data-sly-test="${model.description}">${model.description}</p>
-        <a class="cmp-productcard__link" href="${model.linkURL @ context='uri'}" data-sly-test="${model.linkURL}">View Product</a>
+        <div class="cmp-productcard__actions">
+            <a class="cmp-productcard__link" href="${model.linkURL @ context='uri'}" data-sly-test="${model.linkURL}">View Product</a>
+            <button class="cmp-productcard__add-to-cart"
+                    data-product-name="${model.productName}"
+                    data-product-price="${model.price}"
+                    data-product-image="${model.productImage @ context='uri'}"
+                    type="button">Add to Cart</button>
+        </div>
     </div>
 </div>

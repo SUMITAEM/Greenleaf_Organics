@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        pageTitle="Turmeric Supplement - Greenleaf Organics"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Turmeric Supplement"
+        cq:template="/conf/greenleaf-organics/settings/wcm/templates/product-detail"
+        sling:resourceType="greenleaf-organics/components/page"
+        hideInNav="{Boolean}true">
+        <root jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+            <container jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                <product-image-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <image jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/image" fileReference="/content/dam/greenleaf-organics/images/products/turmeric-supplement.jpg" alt="Turmeric Supplement"/>
+                </product-image-section>
+                <product-info-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <title jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/title" jcr:title="Turmeric Supplement" type="h1"/>
+                    <text jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/text" textIsRich="true"
+                        text="&lt;p class=&quot;product-price&quot;&gt;$19.99&lt;/p&gt;&lt;p class=&quot;product-badge&quot;&gt;Certified Organic&lt;/p&gt;&lt;p&gt;High-potency turmeric capsules with black pepper extract for enhanced absorption. Each capsule contains 1,000mg of organic turmeric root powder standardized to 95% curcuminoids, combined with BioPerine black pepper extract for up to 2,000% better absorption.&lt;/p&gt;&lt;p&gt;Our turmeric is sourced from organic farms in India where this golden spice has been used for centuries in traditional Ayurvedic medicine. Supports joint health, healthy inflammation response, and overall wellness.&lt;/p&gt;"/>
+                </product-info-section>
+                <nutrition-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <title jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/title" jcr:title="Product Details" type="h2"/>
+                    <text jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/text" textIsRich="true"
+                        text="&lt;h3&gt;Supplement Facts (per capsule)&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Organic Turmeric Root: 1,000mg&lt;/li&gt;&lt;li&gt;Curcuminoids: 95%&lt;/li&gt;&lt;li&gt;BioPerine Black Pepper: 10mg&lt;/li&gt;&lt;li&gt;60 capsules per bottle&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;Suggested Use&lt;/h3&gt;&lt;p&gt;Take one capsule daily with food and a full glass of water. For best results, take consistently. Consult your healthcare provider before use if you are pregnant, nursing, or taking any medications. Store in a cool, dry place.&lt;/p&gt;"/>
+                </nutrition-section>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

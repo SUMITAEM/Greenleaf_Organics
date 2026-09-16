@@ -7,11 +7,16 @@
         jcr:title="Products"
         cq:template="/conf/greenleaf-organics/settings/wcm/templates/product-listing"
         sling:resourceType="greenleaf-organics/components/page"
+        navTitle="Products"
         isShowInNavigation="{Boolean}true">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="greenleaf-organics/components/container"
             layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/container"
+                layout="responsiveGrid">
             <banner-section
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="greenleaf-organics/components/container"
@@ -58,6 +63,7 @@
                     categoryName="Wellness"
                     linkURL="/content/greenleaf-organics/us/en/products/wellness"/>
             </product-grid>
+            </container>
         </root>
     </jcr:content>
 </jcr:root>

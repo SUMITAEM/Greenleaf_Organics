@@ -101,7 +101,7 @@ button, input, optgroup, select, textarea {
 // =================================================================
 
 // Scope to page body only — NOT header/footer XFs
-.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 {
+main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 {
     display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 1.5rem !important;
@@ -116,7 +116,7 @@ button, input, optgroup, select, textarea {
     }
 }
 
-.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .aem-GridColumn.aem-GridColumn--default--12 {
+main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .aem-GridColumn.aem-GridColumn--default--12 {
     float: none !important;
     width: auto !important;
     clear: none !important;
@@ -125,15 +125,17 @@ button, input, optgroup, select, textarea {
 }
 
 // Full-width items inside page sections
-.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .title.aem-GridColumn.aem-GridColumn--default--12,
-.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .newslettersignup.aem-GridColumn.aem-GridColumn--default--12,
-.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .testimonial.aem-GridColumn.aem-GridColumn--default--12,
-.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .text.aem-GridColumn.aem-GridColumn--default--12,
-.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .container.aem-GridColumn.aem-GridColumn--default--12,
-.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .herobanner.aem-GridColumn.aem-GridColumn--default--12,
-.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .image.aem-GridColumn.aem-GridColumn--default--12,
-.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .breadcrumb.aem-GridColumn.aem-GridColumn--default--12,
-.root.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .separator.aem-GridColumn.aem-GridColumn--default--12 {
+main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .title.aem-GridColumn.aem-GridColumn--default--12,
+main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .newslettersignup.aem-GridColumn.aem-GridColumn--default--12,
+main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .testimonial.aem-GridColumn.aem-GridColumn--default--12,
+main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .text.aem-GridColumn.aem-GridColumn--default--12,
+main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .container.aem-GridColumn.aem-GridColumn--default--12,
+main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .herobanner.aem-GridColumn.aem-GridColumn--default--12,
+main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .image.aem-GridColumn.aem-GridColumn--default--12,
+main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .breadcrumb.aem-GridColumn.aem-GridColumn--default--12,
+main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .separator.aem-GridColumn.aem-GridColumn--default--12,
+main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .teaser.aem-GridColumn.aem-GridColumn--default--12,
+main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .embed.aem-GridColumn.aem-GridColumn--default--12 {
     grid-column: 1 / -1 !important;
 }
 
@@ -198,8 +200,9 @@ button, input, optgroup, select, textarea {
     &__item-link { color: $color-primary-green; }
 }
 
-//== Teaser
+//== Teaser — horizontal card layout
 .cmp-teaser {
+    display: flex;
     background: $color-white;
     border-radius: $border-radius;
     overflow: hidden;
@@ -211,23 +214,52 @@ button, input, optgroup, select, textarea {
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     }
 
-    &__image .cmp-image__image {
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
+    &__image {
+        flex: 0 0 40%;
+        max-width: 40%;
+
+        .cmp-image__image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 
-    &__content { padding: 1.25rem; }
+    &__content {
+        flex: 1;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
     &__title {
         color: $color-dark-green;
-        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
         a { color: inherit; text-decoration: none; &:hover { color: $color-primary-green; } }
     }
 
     &__description {
-        font-size: 0.9375rem;
+        font-size: 1rem;
         color: $color-foreground-light;
+        line-height: 1.7;
         p { margin: 0; }
+    }
+
+    @media (max-width: $bp-mobile) {
+        flex-direction: column;
+
+        &__image {
+            flex: none;
+            max-width: 100%;
+            height: 200px;
+
+            .cmp-image__image { height: 200px; }
+        }
+
+        &__content { padding: 1.25rem; }
+        &__title { font-size: 1.25rem; }
     }
 }
 
@@ -284,4 +316,24 @@ button, input, optgroup, select, textarea {
     transition: $transition;
 
     &:hover { background: $color-dark-green; }
+}
+
+//== Content images — rounded with shadow
+.cmp-image {
+    &__image {
+        border-radius: $border-radius;
+    }
+}
+
+//== Embed — map containers
+.cmp-embed {
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    .map-placeholder {
+        border-radius: $border-radius;
+        background: $color-background-green !important;
+        color: $color-foreground-light;
+        font-size: 1rem;
+    }
 }

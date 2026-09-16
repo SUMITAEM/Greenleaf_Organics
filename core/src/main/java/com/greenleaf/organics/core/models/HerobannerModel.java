@@ -44,6 +44,9 @@ public class HerobannerModel {
     }
 
     public String getCtaLink() {
+        if (ctaLink != null && ctaLink.startsWith("/content/") && !ctaLink.endsWith(".html")) {
+            return ctaLink + ".html";
+        }
         return ctaLink;
     }
 

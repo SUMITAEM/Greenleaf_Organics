@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        pageTitle="Spirulina Powder - Greenleaf Organics"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Spirulina Powder"
+        cq:template="/conf/greenleaf-organics/settings/wcm/templates/product-detail"
+        sling:resourceType="greenleaf-organics/components/page"
+        hideInNav="{Boolean}true">
+        <root jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+            <container jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                <product-image-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <image jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/image" fileReference="/content/dam/greenleaf-organics/images/products/spirulina-powder.jpg" alt="Spirulina Powder"/>
+                </product-image-section>
+                <product-info-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <title jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/title" jcr:title="Spirulina Powder" type="h1"/>
+                    <text jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/text" textIsRich="true"
+                        text="&lt;p class=&quot;product-price&quot;&gt;$24.99&lt;/p&gt;&lt;p class=&quot;product-badge&quot;&gt;100% Vegan&lt;/p&gt;&lt;p&gt;Pure blue-green algae powder packed with protein, vitamins, and antioxidants. Our spirulina is cultivated in pristine freshwater ponds under controlled conditions to ensure the highest purity and nutritional density.&lt;/p&gt;&lt;p&gt;Spirulina is one of the most nutrient-dense foods on the planet, containing 60% complete protein by weight along with essential fatty acids, B vitamins, iron, and powerful antioxidants like phycocyanin. Add it to smoothies, juices, or energy balls for a natural superfood boost.&lt;/p&gt;"/>
+                </product-info-section>
+                <nutrition-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <title jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/title" jcr:title="Product Details" type="h2"/>
+                    <text jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/text" textIsRich="true"
+                        text="&lt;h3&gt;Nutrition Facts (per teaspoon, 3g)&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Calories: 10&lt;/li&gt;&lt;li&gt;Protein: 2g&lt;/li&gt;&lt;li&gt;Iron: 11% DV&lt;/li&gt;&lt;li&gt;Vitamin B12: 15% DV&lt;/li&gt;&lt;li&gt;Beta-carotene: Rich source&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;Suggested Use&lt;/h3&gt;&lt;p&gt;Start with 1/2 teaspoon daily and gradually increase to 1-2 teaspoons. Mix into smoothies, juices, or water. Can also be added to energy balls, salad dressings, or yogurt. Store in a cool, dry place away from direct sunlight. 8 oz jar provides approximately 75 servings.&lt;/p&gt;"/>
+                </nutrition-section>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

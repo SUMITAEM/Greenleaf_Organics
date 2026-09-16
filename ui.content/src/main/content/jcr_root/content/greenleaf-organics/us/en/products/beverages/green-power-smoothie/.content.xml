@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        pageTitle="Green Power Smoothie - Greenleaf Organics"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Green Power Smoothie"
+        cq:template="/conf/greenleaf-organics/settings/wcm/templates/product-detail"
+        sling:resourceType="greenleaf-organics/components/page"
+        hideInNav="{Boolean}true">
+        <root jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+            <container jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                <product-image-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <image jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/image" fileReference="/content/dam/greenleaf-organics/images/products/green-smoothie.jpg" alt="Green Power Smoothie"/>
+                </product-image-section>
+                <product-info-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <title jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/title" jcr:title="Green Power Smoothie" type="h1"/>
+                    <text jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/text" textIsRich="true"
+                        text="&lt;p class=&quot;product-price&quot;&gt;$7.49&lt;/p&gt;&lt;p class=&quot;product-badge&quot;&gt;100% Vegan&lt;/p&gt;&lt;p&gt;Cold-pressed blend of kale, spinach, apple, and ginger. This vibrant green smoothie is packed with vitamins and minerals, delivering a refreshing boost of energy without any added sugars or artificial ingredients.&lt;/p&gt;&lt;p&gt;Each bottle is made fresh daily using organic produce from our partner farms. The combination of leafy greens, crisp apple, and zingy ginger creates a perfectly balanced flavor that is both nutritious and delicious.&lt;/p&gt;"/>
+                </product-info-section>
+                <nutrition-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
+                    <title jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/title" jcr:title="Product Details" type="h2"/>
+                    <text jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/text" textIsRich="true"
+                        text="&lt;h3&gt;Nutrition Facts (per bottle, 16 oz)&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Calories: 120&lt;/li&gt;&lt;li&gt;Protein: 4g&lt;/li&gt;&lt;li&gt;Fiber: 6g&lt;/li&gt;&lt;li&gt;Vitamin A: 120% DV&lt;/li&gt;&lt;li&gt;Vitamin C: 80% DV&lt;/li&gt;&lt;li&gt;Iron: 20% DV&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;Ingredients&lt;/h3&gt;&lt;p&gt;Organic kale, organic spinach, organic apple juice, organic ginger root, organic lemon juice. No added sugars, preservatives, or artificial flavors.&lt;/p&gt;"/>
+                </nutrition-section>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

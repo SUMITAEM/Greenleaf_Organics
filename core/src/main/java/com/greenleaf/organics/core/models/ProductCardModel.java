@@ -48,6 +48,9 @@ public class ProductCardModel {
     }
 
     public String getLinkURL() {
+        if (linkURL != null && linkURL.startsWith("/content/") && !linkURL.endsWith(".html")) {
+            return linkURL + ".html";
+        }
         return linkURL;
     }
 }
