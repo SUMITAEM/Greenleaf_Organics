@@ -24,7 +24,7 @@
                 <herobanner
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/custom/herobanner"
-                    backgroundImage="/content/dam/greenleaf-organics/images/hero/products-hero.jpg"
+                    backgroundImage="/content/dam/greenleaf-organics/images/hero/katie-smith-uQs1802D0CQ-unsplash.jpg"
                     heading="Our Products"
                     subheading="Browse our curated selection of certified organic goods"
                     overlayOpacity="{Long}35"/>
@@ -41,25 +41,25 @@
                 <categorycard-produce
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/custom/categorycard"
-                    categoryImage="/content/dam/greenleaf-organics/images/categories/fresh-produce.jpg"
+                    categoryImage="/content/dam/greenleaf-organics/images/categories/shelley-pauls-Zaiuy5dKeCk-unsplash.jpg"
                     categoryName="Fresh Produce"
                     linkURL="/content/greenleaf-organics/us/en/products/fresh-produce"/>
                 <categorycard-pantry
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/custom/categorycard"
-                    categoryImage="/content/dam/greenleaf-organics/images/categories/pantry.jpg"
+                    categoryImage="/content/dam/greenleaf-organics/images/categories/denise-johnson-CQpN2IdkSdA-unsplash (1).jpg"
                     categoryName="Pantry Staples"
                     linkURL="/content/greenleaf-organics/us/en/products/pantry"/>
                 <categorycard-beverages
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/custom/categorycard"
-                    categoryImage="/content/dam/greenleaf-organics/images/categories/beverages.jpg"
+                    categoryImage="/content/dam/greenleaf-organics/images/categories/matthew-buchanan-y0hVQcTQg9o-unsplash.jpg"
                     categoryName="Beverages"
                     linkURL="/content/greenleaf-organics/us/en/products/beverages"/>
                 <categorycard-wellness
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/custom/categorycard"
-                    categoryImage="/content/dam/greenleaf-organics/images/categories/wellness.jpg"
+                    categoryImage="/content/dam/greenleaf-organics/images/categories/laura-olsen-lg9QrSa8VaQ-unsplash (1).jpg"
                     categoryName="Wellness"
                     linkURL="/content/greenleaf-organics/us/en/products/wellness"/>
             </product-grid>

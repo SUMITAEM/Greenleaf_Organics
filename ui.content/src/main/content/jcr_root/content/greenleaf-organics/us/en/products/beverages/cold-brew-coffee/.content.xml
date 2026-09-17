@@ -11,7 +11,7 @@
         <root jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
             <container jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
                 <product-image-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
-                    <image jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/image" fileReference="/content/dam/greenleaf-organics/images/products/cold-brew-coffee.jpg" alt="Cold Brew Coffee"/>
+                    <image jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/image" fileReference="/content/dam/greenleaf-organics/images/products/andrew-valdivia-mMI5sdLFoHM-unsplash.jpg" alt="Cold Brew Coffee"/>
                 </product-image-section>
                 <product-info-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
                     <title jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/title" jcr:title="Cold Brew Coffee" type="h1"/>

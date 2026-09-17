@@ -23,7 +23,7 @@
                     <image
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="greenleaf-organics/components/image"
-                        fileReference="/content/dam/greenleaf-organics/images/products/baby-spinach.jpg"
+                        fileReference="/content/dam/greenleaf-organics/images/products/shutter-sphere-collective-6AAptb2kBak-unsplash.jpg"
                         alt="Baby Spinach"/>
                 </product-image-section>
                 <product-info-section

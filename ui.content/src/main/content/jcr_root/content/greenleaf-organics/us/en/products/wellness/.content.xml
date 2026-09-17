@@ -24,7 +24,7 @@
                 <herobanner
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/custom/herobanner"
-                    backgroundImage="/content/dam/greenleaf-organics/images/hero/wellness-hero.jpg"
+                    backgroundImage="/content/dam/greenleaf-organics/images/hero/laura-olsen-lg9QrSa8VaQ-unsplash.jpg"
                     heading="Wellness"
                     subheading="Natural supplements and superfoods for a healthier you"
                     overlayOpacity="{Long}35"/>
@@ -41,7 +41,7 @@
                 <productcard-1
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/custom/productcard"
-                    productImage="/content/dam/greenleaf-organics/images/products/turmeric-supplement.jpg"
+                    productImage="/content/dam/greenleaf-organics/images/products/ikshana-productions-FNGJ69dNpck-unsplash.jpg"
                     productName="Turmeric Supplement"
                     price="$19.99"
                     badge="Organic"
@@ -50,7 +50,7 @@
                 <productcard-2
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/custom/productcard"
-                    productImage="/content/dam/greenleaf-organics/images/products/spirulina-powder.jpg"
+                    productImage="/content/dam/greenleaf-organics/images/products/phuong-nguyen-DgW9B48pRb4-unsplash.jpg"
                     productName="Spirulina Powder"
                     price="$24.99"
                     badge="Vegan"
@@ -59,7 +59,7 @@
                 <productcard-3
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/custom/productcard"
-                    productImage="/content/dam/greenleaf-organics/images/products/elderberry-syrup.jpg"
+                    productImage="/content/dam/greenleaf-organics/images/products/tadeusz-zachwieja-ITFBAchRAiI-unsplash.jpg"
                     productName="Elderberry Syrup"
                     price="$16.99"
                     badge="Organic"

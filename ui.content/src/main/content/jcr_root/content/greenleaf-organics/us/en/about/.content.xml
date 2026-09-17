@@ -24,7 +24,7 @@
                     <herobanner
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="greenleaf-organics/components/custom/herobanner"
-                        backgroundImage="/content/dam/greenleaf-organics/images/hero/about-hero.jpg"
+                        backgroundImage="/content/dam/greenleaf-organics/images/hero/greenforce-staffing-bYZn_C-RswQ-unsplash.jpg"
                         heading="Our Story"
                         subheading="Growing organic since 2005, we believe nature knows best"
                         overlayOpacity="{Long}35"/>
@@ -46,7 +46,7 @@
                     <image
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="greenleaf-organics/components/image"
-                        fileReference="/content/dam/greenleaf-organics/images/hero/farm-story.jpg"
+                        fileReference="/content/dam/greenleaf-organics/images/hero/bernd-dittrich-iD-3OzgXGEY-unsplash.jpg"
                         alt="Our organic farm"/>
                 </story-section>
                 <values-section

@@ -24,7 +24,7 @@
                 <herobanner
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/custom/herobanner"
-                    backgroundImage="/content/dam/greenleaf-organics/images/hero/pantry-hero.jpg"
+                    backgroundImage="/content/dam/greenleaf-organics/images/hero/denise-johnson-CQpN2IdkSdA-unsplash.jpg"
                     heading="Pantry Staples"
                     subheading="Stock your kitchen with organic essentials"
                     overlayOpacity="{Long}35"/>
@@ -41,7 +41,7 @@
                 <productcard-1
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/custom/productcard"
-                    productImage="/content/dam/greenleaf-organics/images/products/raw-honey.jpg"
+                    productImage="/content/dam/greenleaf-organics/images/products/arwin-neil-baichoo-yQzrDgU-KAI-unsplash.jpg"
                     productName="Raw Wildflower Honey"
                     price="$12.99"
                     badge="Local"
@@ -50,7 +50,7 @@
                 <productcard-2
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/custom/productcard"
-                    productImage="/content/dam/greenleaf-organics/images/products/organic-quinoa.jpg"
+                    productImage="/content/dam/greenleaf-organics/images/products/david-magalhaes-HGzn4Puc3Hc-unsplash.jpg"
                     productName="Organic Quinoa"
                     price="$8.99"
                     badge="Organic"
@@ -59,7 +59,7 @@
                 <productcard-3
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/custom/productcard"
-                    productImage="/content/dam/greenleaf-organics/images/products/extra-virgin-olive-oil.jpg"
+                    productImage="/content/dam/greenleaf-organics/images/products/roberta-sorge-uOBApnN_K7w-unsplash.jpg"
                     productName="Extra Virgin Olive Oil"
                     price="$14.99"
                     badge="Organic"

@@ -38,7 +38,7 @@
                     jcr:description="Discover practical strategies to embrace an organic lifestyle without breaking the bank. From seasonal shopping to growing your own herbs, learn how to make organic living accessible for every family."
                     actionsEnabled="false"
                     linkURL="/content/greenleaf-organics/us/en/blog/organic-living-guide"
-                    fileReference="/content/dam/greenleaf-organics/images/blog/organic-living.jpg"/>
+                    fileReference="/content/dam/greenleaf-organics/images/blog/katie-smith-uQs1802D0CQ-unsplash.jpg"/>
                 <teaser-seasonal-recipes
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/teaser"
@@ -46,7 +46,7 @@
                     jcr:description="Celebrate the bounty of autumn with our collection of wholesome recipes featuring seasonal organic produce. From hearty soups to rustic roasted vegetables, make the most of fall's finest ingredients."
                     actionsEnabled="false"
                     linkURL="/content/greenleaf-organics/us/en/blog/seasonal-recipes"
-                    fileReference="/content/dam/greenleaf-organics/images/blog/seasonal-recipes.jpg"/>
+                    fileReference="/content/dam/greenleaf-organics/images/blog/adam-bartoszewicz-tBfFFup9G5g-unsplash.jpg"/>
             </container>
             </container>
         </root>

@@ -23,7 +23,7 @@
                     <image
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="greenleaf-organics/components/image"
-                        fileReference="/content/dam/greenleaf-organics/images/products/organic-avocados.jpg"
+                        fileReference="/content/dam/greenleaf-organics/images/products/thought-catalog-9aOswReDKPo-unsplash.jpg"
                         alt="Organic Avocados"/>
                 </product-image-section>
                 <product-info-section

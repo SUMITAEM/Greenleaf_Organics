@@ -23,7 +23,7 @@
                     <image
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="greenleaf-organics/components/image"
-                        fileReference="/content/dam/greenleaf-organics/images/products/heirloom-tomatoes.jpg"
+                        fileReference="/content/dam/greenleaf-organics/images/products/katerina-shkribey-2iU0MzpJIZA-unsplash.jpg"
                         alt="Heirloom Tomatoes"/>
                 </product-image-section>
                 <product-info-section
