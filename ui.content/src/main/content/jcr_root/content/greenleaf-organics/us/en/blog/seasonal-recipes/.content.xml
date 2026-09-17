@@ -59,8 +59,7 @@
                     jcr:title="10 Tips for Organic Living on a Budget"
                     jcr:description="Discover practical strategies to embrace an organic lifestyle without breaking the bank."
                     actionsEnabled="false"
-                    linkURL="/content/greenleaf-organics/us/en/blog/organic-living-guide"
-                    fileReference="/content/dam/greenleaf-organics/images/blog/katie-smith-uQs1802D0CQ-unsplash.jpg"/>
+                    linkURL="/content/greenleaf-organics/us/en/blog/organic-living-guide"/>
             </related-posts>
             </container>
         </root>

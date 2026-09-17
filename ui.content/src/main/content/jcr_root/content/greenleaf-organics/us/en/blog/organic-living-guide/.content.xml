@@ -59,8 +59,7 @@
                     jcr:title="Seasonal Recipes: Fall Harvest Edition"
                     jcr:description="Celebrate the bounty of autumn with wholesome recipes featuring seasonal organic produce."
                     actionsEnabled="false"
-                    linkURL="/content/greenleaf-organics/us/en/blog/seasonal-recipes"
-                    fileReference="/content/dam/greenleaf-organics/images/blog/adam-bartoszewicz-tBfFFup9G5g-unsplash.jpg"/>
+                    linkURL="/content/greenleaf-organics/us/en/blog/seasonal-recipes"/>
             </related-posts>
             </container>
         </root>
