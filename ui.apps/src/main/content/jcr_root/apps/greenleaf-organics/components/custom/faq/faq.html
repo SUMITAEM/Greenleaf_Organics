@@ -1,0 +1,17 @@
+<sly data-sly-use.model="com.greenleaf.organics.core.models.FaqModel"/>
+<div class="cmp-faq" data-sly-test="${model.faqItems && model.faqItems.size > 0}">
+    <h2 class="cmp-faq__heading" data-sly-test="${model.heading}">${model.heading}</h2>
+    <div class="cmp-faq__list">
+        <sly data-sly-list.item="${model.faqItems}">
+            <div class="cmp-faq__item">
+                <button class="cmp-faq__question" type="button" aria-expanded="false">
+                    <span>${item.question}</span>
+                    <svg class="cmp-faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="cmp-faq__answer">
+                    <p>${item.answer}</p>
+                </div>
+            </div>
+        </sly>
+    </div>
+</div>

@@ -104,9 +104,22 @@
     // ── Init ──
     initLoader();
 
+    // ── FAQ Accordion ──
+    function initFaqAccordion() {
+        document.addEventListener("click", function (e) {
+            var btn = e.target.closest(".cmp-faq__question");
+            if (!btn) return;
+            var expanded = btn.getAttribute("aria-expanded") === "true";
+            btn.setAttribute("aria-expanded", !expanded);
+            var answer = btn.nextElementSibling;
+            if (answer) answer.classList.toggle("is-open");
+        });
+    }
+
     function initAll() {
         initBackToTop();
         initMobileMenu();
+        initFaqAccordion();
     }
 
     if (document.readyState === "loading") {

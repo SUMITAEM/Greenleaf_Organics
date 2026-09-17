@@ -98,6 +98,74 @@
                         textIsRich="true"
                         text="&lt;p&gt;Behind every leaf of lettuce and basket of berries is a dedicated team of professionals who are passionate about organic living. Our leadership team brings together decades of experience in organic agriculture, sustainable business practices, and community development. From our CEO and co-founder Maria Gonzalez, who left a career in corporate agriculture to pursue her vision of accessible organic food, to our Head of Farming Operations David Chen, who oversees our network of partner farms — every member of the Greenleaf family is driven by a shared commitment to a healthier, more sustainable future.&lt;/p&gt;"/>
                 </team-section>
+                <teammembers-section
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/container"
+                    layout="responsiveGrid">
+                    <teammembers
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/custom/teammembers"
+                        heading="Our Leadership">
+                        <members jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                photo="/content/dam/greenleaf-organics/images/team/customer-sarah.jpg"
+                                name="Maria Gonzalez"
+                                role="CEO &amp; Co-Founder"
+                                bio="Left corporate agriculture to build a company that makes organic food accessible to every family."/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                photo="/content/dam/greenleaf-organics/images/team/customer-james.jpg"
+                                name="David Chen"
+                                role="Head of Farming Operations"
+                                bio="Oversees our network of 50+ partner farms and ensures the highest organic certification standards."/>
+                            <item2
+                                jcr:primaryType="nt:unstructured"
+                                photo="/content/dam/greenleaf-organics/images/team/customer-sarah.jpg"
+                                name="Priya Patel"
+                                role="Director of Sustainability"
+                                bio="Champions zero-waste practices and carbon-neutral logistics across our supply chain."/>
+                            <item3
+                                jcr:primaryType="nt:unstructured"
+                                photo="/content/dam/greenleaf-organics/images/team/customer-james.jpg"
+                                name="Marcus Williams"
+                                role="Head of Product Development"
+                                bio="Curates our product line and develops new organic offerings based on customer feedback and nutritional research."/>
+                        </members>
+                    </teammembers>
+                </teammembers-section>
+                <faq-section
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/container"
+                    layout="responsiveGrid">
+                    <faq
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="greenleaf-organics/components/custom/faq"
+                        heading="Frequently Asked Questions">
+                        <faqItems jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                question="What does 'certified organic' mean?"
+                                answer="Certified organic means our products are grown without synthetic pesticides, artificial fertilizers, or genetically modified organisms. Every product we sell meets USDA organic certification standards, verified through annual third-party audits of our partner farms."/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                question="How do you ensure freshness?"
+                                answer="We operate a farm-to-table model where produce is harvested and delivered within 48 hours. Our cold-chain logistics maintain optimal temperatures from harvest to your doorstep, ensuring peak freshness and nutritional value."/>
+                            <item2
+                                jcr:primaryType="nt:unstructured"
+                                question="Do you offer delivery outside California?"
+                                answer="Currently, we deliver fresh produce within California. However, our pantry staples, wellness products, and beverages are available for nationwide shipping. We are expanding our fresh delivery network and plan to reach additional West Coast states by 2027."/>
+                            <item3
+                                jcr:primaryType="nt:unstructured"
+                                question="Can I visit your farms?"
+                                answer="Absolutely! We host monthly farm tours at our headquarters in San Jose and seasonal harvest events at select partner farms. Check our Events page or subscribe to our newsletter for upcoming dates and registration details."/>
+                            <item4
+                                jcr:primaryType="nt:unstructured"
+                                question="What is your return policy?"
+                                answer="We stand behind the quality of every product. If you receive anything that does not meet your expectations, contact us within 48 hours of delivery for a full refund or replacement. No questions asked — your satisfaction is our guarantee."/>
+                        </faqItems>
+                    </faq>
+                </faq-section>
             </container>
         </root>
     </jcr:content>

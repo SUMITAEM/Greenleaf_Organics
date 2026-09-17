@@ -1,0 +1,16 @@
+<sly data-sly-use.model="com.greenleaf.organics.core.models.TeamMembersModel"/>
+<div class="cmp-teammembers" data-sly-test="${model.members && model.members.size > 0}">
+    <h2 class="cmp-teammembers__heading" data-sly-test="${model.heading}">${model.heading}</h2>
+    <div class="cmp-teammembers__grid">
+        <sly data-sly-list.member="${model.members}">
+            <div class="cmp-teammembers__card">
+                <img class="cmp-teammembers__photo" src="${member.photo @ context='uri'}" alt="${member.name}" data-sly-test="${member.photo}"/>
+                <div class="cmp-teammembers__info">
+                    <h3 class="cmp-teammembers__name">${member.name}</h3>
+                    <span class="cmp-teammembers__role" data-sly-test="${member.role}">${member.role}</span>
+                    <p class="cmp-teammembers__bio" data-sly-test="${member.bio}">${member.bio}</p>
+                </div>
+            </div>
+        </sly>
+    </div>
+</div>

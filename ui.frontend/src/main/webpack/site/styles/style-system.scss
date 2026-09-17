@@ -1,0 +1,84 @@
+
+//== AEM Style System Variants
+//   Authors select these styles from the Styles panel in the Page Editor.
+//   AEM applies the CSS class to the component's wrapper element.
+
+// ── Hero Banner Styles ──
+
+// Compact hero — reduced height
+.cmp-herobanner--compact {
+    .cmp-herobanner { min-height: 300px; }
+    .cmp-herobanner__heading { font-size: 2.5rem; }
+    .cmp-herobanner__subheading { font-size: 1rem; margin-bottom: 1.5rem; }
+}
+
+// Light overlay
+.cmp-herobanner--light-overlay {
+    .cmp-herobanner__overlay { background: rgba(255, 255, 255, 0.7); }
+    .cmp-herobanner__heading { color: $color-dark-green; text-shadow: none; }
+    .cmp-herobanner__subheading { color: $color-foreground; text-shadow: none; }
+}
+
+// ── Product Card Styles ──
+
+// Horizontal layout
+.cmp-productcard--horizontal {
+    .cmp-productcard {
+        flex-direction: row;
+
+        .cmp-productcard__image-wrapper { width: 40%; height: auto; }
+        .cmp-productcard__info { width: 60%; }
+    }
+}
+
+// Bordered (no shadow)
+.cmp-productcard--bordered {
+    .cmp-productcard {
+        box-shadow: none;
+        border: 2px solid $color-border;
+
+        &:hover {
+            border-color: $color-primary-green;
+            box-shadow: none;
+        }
+    }
+}
+
+// ── Testimonial Styles ──
+
+// Left-aligned testimonial
+.cmp-testimonial--left {
+    .cmp-testimonial {
+        text-align: left;
+        border-top: none;
+        border-left: 4px solid $color-primary-green;
+    }
+    .cmp-testimonial__author { justify-content: flex-start; }
+    .cmp-testimonial__quote::before { display: none; }
+}
+
+// Minimal testimonial
+.cmp-testimonial--minimal {
+    .cmp-testimonial {
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        padding: 1.5rem 0;
+    }
+}
+
+// ── FAQ Styles ──
+
+// Boxed FAQ items
+.cmp-faq--boxed {
+    .cmp-faq__item {
+        border: 1px solid $color-border;
+        border-radius: $border-radius;
+        margin-bottom: 0.75rem;
+        padding: 0 1rem;
+
+        &:first-child { border-top: 1px solid $color-border; }
+    }
+    .cmp-faq__question { padding: 1rem 0; }
+    .cmp-faq__answer { padding: 0 0 1rem; }
+}
