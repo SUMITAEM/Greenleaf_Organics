@@ -16,7 +16,7 @@
             <image
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="greenleaf-organics/components/image"
-                fileReference="/content/dam/greenleaf-organics/icons/greenleaf-logo.png"
+                fileReference="/content/dam/greenleaf-organics/images/logo/logo.jpg"
                 alt="Greenleaf Organics"
                 isDecorative="{Boolean}false"
                 linkURL="/content/greenleaf-organics/us/en"/>

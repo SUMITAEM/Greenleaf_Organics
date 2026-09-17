@@ -126,6 +126,14 @@ footer.experiencefragment {
         margin: 0;
     }
 
+    // ── Footer logo ──
+    .cmp-image__image {
+        max-height: 50px;
+        width: auto;
+        border-radius: 0;
+        margin-bottom: 1rem;
+    }
+
     // ── Separator ──
     .cmp-separator__horizontal-rule {
         margin: 0;
