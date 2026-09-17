@@ -24,7 +24,7 @@
                 <herobanner
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/custom/herobanner"
-                    backgroundImage="/content/dam/greenleaf-organics/images/hero/shelley-pauls-kuR1Kwo4my4-unsplash.jpg"
+                    backgroundImage="/content/dam/greenleaf-organics/images/hero/fresh-produce-hero.jpg"
                     heading="Fresh Produce"
                     subheading="Seasonal fruits and vegetables, harvested at peak ripeness"
                     overlayOpacity="{Long}35"/>
@@ -41,7 +41,7 @@
                 <productcard-1
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/custom/productcard"
-                    productImage="/content/dam/greenleaf-organics/images/products/thought-catalog-9aOswReDKPo-unsplash.jpg"
+                    productImage="/content/dam/greenleaf-organics/images/products/organic-avocados.jpg"
                     productName="Organic Avocados"
                     price="$5.99"
                     badge="Organic"
@@ -50,7 +50,7 @@
                 <productcard-2
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/custom/productcard"
-                    productImage="/content/dam/greenleaf-organics/images/products/katerina-shkribey-2iU0MzpJIZA-unsplash.jpg"
+                    productImage="/content/dam/greenleaf-organics/images/products/heirloom-tomatoes.jpg"
                     productName="Heirloom Tomatoes"
                     price="$4.49"
                     badge="Local"
@@ -59,7 +59,7 @@
                 <productcard-3
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/custom/productcard"
-                    productImage="/content/dam/greenleaf-organics/images/products/shutter-sphere-collective-6AAptb2kBak-unsplash.jpg"
+                    productImage="/content/dam/greenleaf-organics/images/products/baby-spinach.jpg"
                     productName="Baby Spinach"
                     price="$3.99"
                     badge="Organic"
