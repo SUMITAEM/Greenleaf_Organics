@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        pageTitle="Search Results - Greenleaf Organics"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Search Results"
+        cq:template="/conf/greenleaf-organics/settings/wcm/templates/page-content"
+        sling:resourceType="greenleaf-organics/components/page"
+        navTitle="Search"
+        hideInNav="{Boolean}true">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="greenleaf-organics/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/title"
+                    jcr:title="Search Results"
+                    type="h1"/>
+                <text
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/text"
+                    textIsRich="true"
+                    text="&lt;p&gt;Use the search bar above to find products, articles, and more across our site.&lt;/p&gt;"/>
+                <search
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/search"
+                    searchRoot="/content/greenleaf-organics/us"/>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

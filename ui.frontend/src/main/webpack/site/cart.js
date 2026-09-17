@@ -211,6 +211,8 @@
         });
     }
 
+    window.greenleafAddToCart = addToCart;
+
     if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", init);
     } else {

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        pageTitle="Page Not Found - Greenleaf Organics"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Page Not Found"
+        cq:template="/conf/greenleaf-organics/settings/wcm/templates/page-content"
+        sling:resourceType="greenleaf-organics/components/page"
+        hideInNav="{Boolean}true">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="greenleaf-organics/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="greenleaf-organics/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/title"
+                    jcr:title="404"
+                    type="h1"/>
+                <text
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/text"
+                    textIsRich="true"
+                    text="&lt;h2 style='text-align:center;color:#666;font-weight:400;margin-bottom:2rem;'&gt;Oops! Page Not Found&lt;/h2&gt;&lt;p style='text-align:center;font-size:1.1rem;color:#666;max-width:500px;margin:0 auto 2rem;'&gt;The page you're looking for doesn't exist or has been moved. Let's get you back on track.&lt;/p&gt;&lt;p style='text-align:center;'&gt;&lt;a href='/content/greenleaf-organics/us/en.html' style='display:inline-block;padding:0.875rem 2.5rem;background:#4A7C23;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:1rem;'&gt;Go to Homepage&lt;/a&gt;&lt;/p&gt;"/>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

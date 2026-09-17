@@ -1,0 +1,64 @@
+
+//== Product Filter/Sort Bar
+
+.product-filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $color-border;
+    grid-column: 1 / -1 !important;
+
+    &__badges {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    &__badge {
+        padding: 0.375rem 1rem;
+        border: 1.5px solid $color-border;
+        border-radius: 20px;
+        background: $color-white;
+        color: $color-foreground;
+        font-size: 0.8rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover,
+        &.is-active {
+            border-color: $color-primary-green;
+            background: $color-primary-green;
+            color: $color-white;
+        }
+    }
+
+    &__sort {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: $color-foreground-light;
+        }
+
+        select {
+            padding: 0.375rem 0.75rem;
+            border: 1.5px solid $color-border;
+            border-radius: $border-radius;
+            font-size: 0.8rem;
+            background: $color-white;
+            color: $color-foreground;
+            cursor: pointer;
+            outline: none;
+
+            &:focus { border-color: $color-primary-green; }
+        }
+    }
+}
