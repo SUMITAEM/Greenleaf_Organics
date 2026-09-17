@@ -20,7 +20,7 @@
                 <about-column
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/text"
-                    text="&lt;h3>Greenleaf Organics&lt;/h3>&lt;p>Your trusted source for certified organic produce, pantry staples, beverages, and wellness products. We believe in sustainable farming and delivering nature's best to your table.&lt;/p>"
+                    text="&lt;p>Your trusted source for certified organic produce, pantry staples, beverages, and wellness products. We believe in sustainable farming and delivering nature's best to your table.&lt;/p>"
                     textIsRich="true"/>
                 <links-column
                     jcr:primaryType="nt:unstructured"
