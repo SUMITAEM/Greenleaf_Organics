@@ -11,7 +11,7 @@
         <root jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
             <container jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
                 <product-image-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
-                    <image jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/image" fileReference="/content/dam/greenleaf-organics/images/products/tadeusz-zachwieja-ITFBAchRAiI-unsplash.jpg" alt="Elderberry Syrup"/>
+                    <image jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/text" textIsRich="true" text="&lt;p&gt;&lt;img src=&quot;/content/dam/greenleaf-organics/images/products/tadeusz-zachwieja-ITFBAchRAiI-unsplash.jpg&quot; alt=&quot;Elderberry Syrup&quot; style=&quot;width:100%;height:auto;border-radius:8px&quot;/&gt;&lt;/p&gt;"/>
                 </product-image-section>
                 <product-info-section jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/container" layout="responsiveGrid">
                     <title jcr:primaryType="nt:unstructured" sling:resourceType="greenleaf-organics/components/title" jcr:title="Elderberry Syrup" type="h1"/>
