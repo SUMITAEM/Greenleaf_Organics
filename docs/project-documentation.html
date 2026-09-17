@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greenleaf Organics — Project Documentation</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap">
+<style>
+:root {
+  --green-900: #1a3a0a;
+  --green-700: #2D5016;
+  --green-500: #4A7C23;
+  --green-100: #e8f5e0;
+  --green-50: #f4faf0;
+  --sand: #fafaf6;
+  --ink: #1d1d1b;
+  --ink-light: #555;
+  --ink-muted: #888;
+  --border: #e0ddd6;
+  --white: #fff;
+  --accent: #4A7C23;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+@page { margin: 1.5cm 2cm; size: A4; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 11pt;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--white);
+  padding: 0 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ── Cover ── */
+.cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 0;
+  page-break-after: always;
+}
+.cover__badge {
+  display: inline-block;
+  background: var(--green-500);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0.35rem 1rem;
+  border-radius: 2px;
+  margin-bottom: 2rem;
+}
+.cover h1 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--green-700);
+  margin-bottom: 1.5rem;
+  text-wrap: balance;
+}
+.cover__sub {
+  font-size: 1.15rem;
+  color: var(--ink-light);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+.cover__meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  border-top: 2px solid var(--green-500);
+  padding-top: 1.5rem;
+}
+.cover__meta dt {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--ink-muted);
+  margin-bottom: 0.25rem;
+}
+.cover__meta dd {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--green-700);
+}
+
+/* ── Section headings ── */
+h2 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--green-700);
+  margin: 3rem 0 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--green-100);
+  page-break-after: avoid;
+  text-wrap: balance;
+}
+h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--green-900);
+  margin: 1.75rem 0 0.75rem;
+  page-break-after: avoid;
+}
+h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-light);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 1.5rem 0 0.5rem;
+}
+
+p { margin-bottom: 0.85rem; }
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1.5rem;
+  font-size: 0.88rem;
+  page-break-inside: auto;
+}
+thead th {
+  background: var(--green-50);
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--green-700);
+  border-bottom: 2px solid var(--green-500);
+}
+td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+tr:last-child td { border-bottom: none; }
+code {
+  font-family: 'SF Mono', 'Cascadia Code', monospace;
+  font-size: 0.82em;
+  background: var(--green-50);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  color: var(--green-700);
+}
+
+/* ── Stat cards ── */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+.stat {
+  background: var(--green-50);
+  border-left: 3px solid var(--green-500);
+  padding: 1rem 1.25rem;
+}
+.stat__number {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 2rem;
+  color: var(--green-700);
+  line-height: 1;
+}
+.stat__label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--ink-muted);
+  margin-top: 0.35rem;
+}
+
+/* ── Feature list ── */
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 1rem 0 1.5rem;
+}
+.feature-item {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  page-break-inside: avoid;
+}
+.feature-item strong {
+  display: block;
+  color: var(--green-700);
+  margin-bottom: 0.2rem;
+  font-size: 0.9rem;
+}
+.feature-item span {
+  font-size: 0.82rem;
+  color: var(--ink-light);
+  line-height: 1.5;
+}
+
+/* ── Architecture diagram ── */
+.arch-box {
+  background: var(--green-50);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.5rem 2rem;
+  margin: 1.5rem 0;
+  font-family: 'SF Mono', monospace;
+  font-size: 0.78rem;
+  line-height: 2;
+  color: var(--green-900);
+  text-align: center;
+  page-break-inside: avoid;
+}
+.arch-box .layer {
+  background: var(--white);
+  border: 1.5px solid var(--green-500);
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  margin: 0.35rem auto;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.arch-box .layer-label {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--ink-muted);
+  margin: 0.75rem 0 0.15rem;
+}
+.arch-box .arrow { color: var(--green-500); font-size: 1.2rem; }
+
+/* ── TOC ── */
+.toc {
+  page-break-after: always;
+  padding: 3rem 0;
+}
+.toc h2 { border: none; margin-bottom: 1.5rem; }
+.toc ol {
+  list-style: none;
+  counter-reset: toc;
+}
+.toc li {
+  counter-increment: toc;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+.toc li::before {
+  content: counter(toc, decimal-leading-zero);
+  font-family: 'DM Serif Display', Georgia, serif;
+  color: var(--green-500);
+  margin-right: 1rem;
+  font-size: 1.1rem;
+}
+
+/* ── Print ── */
+@media print {
+  body { padding: 0; max-width: none; }
+  .cover { min-height: auto; padding: 2rem 0; }
+  h2 { margin-top: 2rem; }
+  .stats { grid-template-columns: repeat(4, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ COVER ═══════════════ -->
+<section class="cover">
+  <span class="cover__badge">AEM 6.5 Project Documentation</span>
+  <h1>Greenleaf Organics</h1>
+  <p class="cover__sub">A full-featured Adobe Experience Manager website for a certified organic food retailer — built with AEM Core Components, custom Sling Models, servlets, schedulers, and a modern responsive frontend.</p>
+  <dl class="cover__meta">
+    <div><dt>Version</dt><dd>1.0.0-SNAPSHOT</dd></div>
+    <div><dt>Platform</dt><dd>AEM 6.5 / Java 11</dd></div>
+    <div><dt>Date</dt><dd>September 2026</dd></div>
+  </dl>
+</section>
+
+<!-- ═══════════════ TOC ═══════════════ -->
+<section class="toc">
+  <h2>Contents</h2>
+  <ol>
+    <li>Project Overview &amp; Purpose</li>
+    <li>Technology Stack</li>
+    <li>Architecture</li>
+    <li>Project Statistics</li>
+    <li>Site Map &amp; Pages</li>
+    <li>Custom Components</li>
+    <li>Templates</li>
+    <li>Backend — Servlets, Services &amp; Schedulers</li>
+    <li>Frontend — JavaScript Features</li>
+    <li>Styling &amp; Responsive Design</li>
+    <li>OSGi Configuration</li>
+    <li>DAM &amp; Asset Management</li>
+    <li>Key Features &amp; Differentiators</li>
+    <li>Build &amp; Deployment</li>
+    <li>Git History</li>
+  </ol>
+</section>
+
+<!-- ═══════════════ 1. OVERVIEW ═══════════════ -->
+<h2>1. Project Overview &amp; Purpose</h2>
+<p><strong>Greenleaf Organics</strong> is a complete AEM 6.5 website for a fictional certified organic food retailer based in San Jose, California. The site showcases the company's product catalog across four categories (Fresh Produce, Pantry Staples, Beverages, Wellness), a company story, a blog with articles, and a contact page — all built using Adobe Experience Manager best practices.</p>
+
+<h3>Business Purpose</h3>
+<p>The website serves as the digital storefront and brand hub for Greenleaf Organics, enabling customers to browse products, read blog content about organic living, subscribe to newsletters, submit contact inquiries, and manage a shopping cart and wishlist. It demonstrates a realistic e-commerce-ready AEM implementation suitable for a mid-size organic food retailer.</p>
+
+<h3>Target Audience</h3>
+<p>Health-conscious consumers, families seeking organic alternatives, and sustainability-minded shoppers in the United States — primarily the San Jose / Bay Area region, with national reach through the website.</p>
+
+<h3>Maven Coordinates</h3>
+<table>
+  <tr><td><strong>Group ID</strong></td><td><code>com.greenleaf.organics</code></td></tr>
+  <tr><td><strong>Artifact ID</strong></td><td><code>greenleaf-organics-site</code></td></tr>
+  <tr><td><strong>Version</strong></td><td><code>1.0.0-SNAPSHOT</code></td></tr>
+  <tr><td><strong>Packaging</strong></td><td><code>pom</code> (multi-module reactor)</td></tr>
+</table>
+
+<!-- ═══════════════ 2. TECH STACK ═══════════════ -->
+<h2>2. Technology Stack</h2>
+<table>
+  <thead><tr><th>Layer</th><th>Technology</th><th>Version / Details</th></tr></thead>
+  <tbody>
+    <tr><td>CMS Platform</td><td>Adobe Experience Manager</td><td>6.5</td></tr>
+    <tr><td>Component Framework</td><td>AEM Core Components</td><td>v2 (Navigation, Breadcrumb, Image, Teaser, Search, etc.)</td></tr>
+    <tr><td>Backend Language</td><td>Java</td><td>11 (OpenJDK)</td></tr>
+    <tr><td>Backend Framework</td><td>Apache Sling</td><td>Sling Models, Sling Servlets, ResourceResolver API</td></tr>
+    <tr><td>OSGi Container</td><td>Apache Felix</td><td>Declarative Services (DS) annotations</td></tr>
+    <tr><td>Templating</td><td>HTL (Sightly)</td><td>AEM's server-side templating language</td></tr>
+    <tr><td>Build Tool</td><td>Apache Maven</td><td>Multi-module reactor build</td></tr>
+    <tr><td>Frontend Build</td><td>Webpack</td><td>SCSS compilation, JS bundling, clientlib generation</td></tr>
+    <tr><td>CSS Preprocessor</td><td>SCSS (Sass)</td><td>Variables, nesting, mixins, responsive breakpoints</td></tr>
+    <tr><td>JavaScript</td><td>Vanilla ES5</td><td>No frameworks — pure DOM manipulation</td></tr>
+    <tr><td>Content Storage</td><td>Apache Jackrabbit Oak</td><td>JCR (Java Content Repository)</td></tr>
+    <tr><td>Version Control</td><td>Git / GitHub</td><td>github.com/SUMITAEM/Greenleaf_Organics</td></tr>
+  </tbody>
+</table>
+
+<!-- ═══════════════ 3. ARCHITECTURE ═══════════════ -->
+<h2>3. Architecture</h2>
+<p>The project follows the standard AEM multi-module Maven archetype structure with clear separation between backend logic, frontend assets, content, and configuration.</p>
+
+<div class="arch-box">
+  <div class="layer-label">Browser / Client</div>
+  <div class="layer">HTML (HTL) &nbsp;•&nbsp; CSS (SCSS) &nbsp;•&nbsp; JavaScript &nbsp;•&nbsp; AEM Clientlibs</div>
+  <div class="arrow">↕</div>
+  <div class="layer-label">AEM Author / Publish (localhost:4502)</div>
+  <div class="layer">Sling Servlets &nbsp;•&nbsp; Sling Models &nbsp;•&nbsp; OSGi Services &nbsp;•&nbsp; Schedulers</div>
+  <div class="arrow">↕</div>
+  <div class="layer-label">Content Repository (JCR / Oak)</div>
+  <div class="layer">/content/greenleaf-organics &nbsp;•&nbsp; /content/dam &nbsp;•&nbsp; /var/greenleaf-organics &nbsp;•&nbsp; /conf</div>
+</div>
+
+<h3>Module Structure</h3>
+<table>
+  <thead><tr><th>Module</th><th>Purpose</th></tr></thead>
+  <tbody>
+    <tr><td><code>core</code></td><td>Java backend — Sling Models, Servlets, OSGi Services, Schedulers, Filters, Listeners</td></tr>
+    <tr><td><code>ui.apps</code></td><td>AEM components (HTL templates, dialogs, edit configs), proxy components, clientlibs</td></tr>
+    <tr><td><code>ui.content</code></td><td>Content pages, Experience Fragments (header/footer), DAM assets, templates</td></tr>
+    <tr><td><code>ui.config</code></td><td>OSGi configurations (repoinit, service user mappings, logging, CORS)</td></tr>
+    <tr><td><code>ui.frontend</code></td><td>Webpack-based frontend build — SCSS, JavaScript, compiled into AEM clientlibs</td></tr>
+    <tr><td><code>all</code></td><td>Aggregator package that embeds all modules for single deployment</td></tr>
+    <tr><td><code>ui.tests</code></td><td>Cypress-based UI tests</td></tr>
+    <tr><td><code>it.tests</code></td><td>Server-side integration tests</td></tr>
+    <tr><td><code>dispatcher</code></td><td>Dispatcher configuration for caching and URL rewriting</td></tr>
+  </tbody>
+</table>
+
+<!-- ═══════════════ 4. STATISTICS ═══════════════ -->
+<h2>4. Project Statistics</h2>
+<div class="stats">
+  <div class="stat"><div class="stat__number">25</div><div class="stat__label">Content Pages</div></div>
+  <div class="stat"><div class="stat__number">18</div><div class="stat__label">Java Classes</div></div>
+  <div class="stat"><div class="stat__number">60</div><div class="stat__label">SCSS Files</div></div>
+  <div class="stat"><div class="stat__number">6</div><div class="stat__label">JavaScript Files</div></div>
+</div>
+<div class="stats">
+  <div class="stat"><div class="stat__number">7</div><div class="stat__label">Custom Components</div></div>
+  <div class="stat"><div class="stat__number">10</div><div class="stat__label">Page Templates</div></div>
+  <div class="stat"><div class="stat__number">44</div><div class="stat__label">DAM Assets</div></div>
+  <div class="stat"><div class="stat__number">35</div><div class="stat__label">Git Commits</div></div>
+</div>
+
+<!-- ═══════════════ 5. SITE MAP ═══════════════ -->
+<h2>5. Site Map &amp; Pages</h2>
+<h3>Page Hierarchy</h3>
+<table>
+  <thead><tr><th>Page</th><th>Template</th><th>Description</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Home</strong> <code>/us/en</code></td><td>home-page</td><td>Hero banner, category cards, featured products, testimonials, newsletter signup</td></tr>
+    <tr><td><strong>Products</strong> <code>/us/en/products</code></td><td>product-listing</td><td>Hero banner + 4 category cards (Fresh Produce, Pantry, Beverages, Wellness)</td></tr>
+    <tr><td>&nbsp;&nbsp;└ <strong>Fresh Produce</strong></td><td>product-listing</td><td>3 product cards: Organic Avocados, Heirloom Tomatoes, Baby Spinach</td></tr>
+    <tr><td>&nbsp;&nbsp;└ <strong>Pantry Staples</strong></td><td>product-listing</td><td>3 product cards: Raw Wildflower Honey, Organic Quinoa, Extra Virgin Olive Oil</td></tr>
+    <tr><td>&nbsp;&nbsp;└ <strong>Beverages</strong></td><td>product-listing</td><td>3 product cards: Green Power Smoothie, Cold Brew Coffee, Herbal Kombucha</td></tr>
+    <tr><td>&nbsp;&nbsp;└ <strong>Wellness</strong></td><td>product-listing</td><td>3 product cards: Turmeric Supplement, Spirulina Powder, Elderberry Syrup</td></tr>
+    <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;└ <strong>12 Product Detail Pages</strong></td><td>product-detail</td><td>Product image, price, description, nutrition facts, Add to Cart button</td></tr>
+    <tr><td><strong>About Us</strong> <code>/us/en/about</code></td><td>about-page</td><td>Hero, company story, farm image, 4 values (feature grid), team section</td></tr>
+    <tr><td><strong>Blog</strong> <code>/us/en/blog</code></td><td>page-content</td><td>2 article teasers (horizontal card layout)</td></tr>
+    <tr><td>&nbsp;&nbsp;└ <strong>Organic Living Guide</strong></td><td>blog-article</td><td>10 tips for organic living — full article with related posts</td></tr>
+    <tr><td>&nbsp;&nbsp;└ <strong>Seasonal Recipes</strong></td><td>blog-article</td><td>Fall harvest recipes — soup, salad, roasted vegetables</td></tr>
+    <tr><td><strong>Contact</strong> <code>/us/en/contact</code></td><td>contact-page</td><td>Contact form, map placeholder, 2 store locations</td></tr>
+    <tr><td><strong>Search Results</strong></td><td>page-content</td><td>Dedicated search page (hidden from nav)</td></tr>
+    <tr><td><strong>404 Page</strong></td><td>page-content</td><td>Custom "Page Not Found" with Go Home CTA (hidden from nav)</td></tr>
+  </tbody>
+</table>
+
+<h3>Experience Fragments</h3>
+<table>
+  <thead><tr><th>XF</th><th>Components</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Header</strong></td><td>Logo (linked to homepage), Navigation (depth 2, dropdown subcategories), Search, Wishlist icon, Cart icon with count badge</td></tr>
+    <tr><td><strong>Footer</strong></td><td>Quick Links (Home, Products, About Us, Blog, Contact), Contact Info (address, phone, email), Separator, Copyright</td></tr>
+  </tbody>
+</table>
+
+<!-- ═══════════════ 6. CUSTOM COMPONENTS ═══════════════ -->
+<h2>6. Custom Components</h2>
+<table>
+  <thead><tr><th>Component</th><th>Resource Type</th><th>Sling Model</th><th>Description</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Hero Banner</strong></td><td><code>custom/herobanner</code></td><td><code>HerobannerModel</code></td><td>Full-width hero with background image, overlay, heading, subheading, and CTA button. Configurable overlay opacity.</td></tr>
+    <tr><td><strong>Product Card</strong></td><td><code>custom/productcard</code></td><td><code>ProductCardModel</code></td><td>Card with product image, badge (Organic/Local/Vegan), name, price, description, View Product link, Add to Cart button, and wishlist heart.</td></tr>
+    <tr><td><strong>Category Card</strong></td><td><code>custom/categorycard</code></td><td>HTL properties</td><td>Linked card with category image and name. Image zoom effect on hover.</td></tr>
+    <tr><td><strong>Testimonial</strong></td><td><code>custom/testimonial</code></td><td><code>TestimonialModel</code></td><td>Customer quote with star rating, author avatar, name, and role. Computed star list via @PostConstruct.</td></tr>
+    <tr><td><strong>Newsletter Signup</strong></td><td><code>custom/newslettersignup</code></td><td>HTL properties</td><td>Email subscription form. Posts to <code>/bin/greenleaf/subscribe</code> via AJAX. Success/error toast feedback.</td></tr>
+    <tr><td><strong>Feature Grid</strong></td><td><code>custom/featuregrid</code></td><td>HTL properties</td><td>Icon-based feature card with selectable icon (leaf, truck, heart, shield), title, and description.</td></tr>
+    <tr><td><strong>Cart Icon</strong></td><td><code>custom/carticon</code></td><td>None (static HTML)</td><td>Header component rendering wishlist heart + cart SVG icons with count badges.</td></tr>
+  </tbody>
+</table>
+
+<!-- ═══════════════ 7. TEMPLATES ═══════════════ -->
+<h2>7. Templates</h2>
+<table>
+  <thead><tr><th>Template</th><th>Status</th><th>Structure</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Home Page</strong></td><td>Enabled</td><td>Header XF → hero-section, featured-categories, product-highlights, testimonials-section, newsletter-section → Footer XF</td></tr>
+    <tr><td><strong>Product Listing</strong></td><td>Enabled</td><td>Header XF → container (banner-section + product-grid) → Footer XF</td></tr>
+    <tr><td><strong>Product Detail</strong></td><td>Enabled</td><td>Header XF → container (breadcrumb, product-image-section, product-info-section, nutrition-section) → Footer XF</td></tr>
+    <tr><td><strong>About Page</strong></td><td>Enabled</td><td>Header XF → container (hero, story, values, team sections) → Footer XF</td></tr>
+    <tr><td><strong>Blog Article</strong></td><td>Enabled</td><td>Header XF → container (hero-image, article-content, related-posts) → Footer XF</td></tr>
+    <tr><td><strong>Contact Page</strong></td><td>Enabled</td><td>Header XF → container (title, contact-form, map, locations) → Footer XF</td></tr>
+    <tr><td><strong>Content Page</strong></td><td>Enabled</td><td>General-purpose page for blog landing, search results, 404</td></tr>
+  </tbody>
+</table>
+
+<!-- ═══════════════ 8. BACKEND ═══════════════ -->
+<h2>8. Backend — Servlets, Services &amp; Schedulers</h2>
+
+<h3>Sling Models (3)</h3>
+<table>
+  <thead><tr><th>Model</th><th>Adaptable</th><th>Properties</th></tr></thead>
+  <tbody>
+    <tr><td><code>HerobannerModel</code></td><td>Resource</td><td>backgroundImage, heading, subheading, ctaLabel, ctaLink (auto-appends .html), overlayOpacity</td></tr>
+    <tr><td><code>ProductCardModel</code></td><td>Resource</td><td>productImage, productName, price, badge, description, linkURL (auto-appends .html)</td></tr>
+    <tr><td><code>TestimonialModel</code></td><td>Resource</td><td>quote, authorImage, authorName, authorRole, starRating, stars (computed List&lt;Integer&gt;)</td></tr>
+  </tbody>
+</table>
+
+<h3>Servlets (4)</h3>
+<table>
+  <thead><tr><th>Servlet</th><th>Path</th><th>Method</th><th>Purpose</th></tr></thead>
+  <tbody>
+    <tr><td><code>ContactFormServlet</code></td><td><code>/bin/greenleaf/contact</code></td><td>POST</td><td>Validates name/email/message, stores submission in JCR at <code>/var/greenleaf-organics/contact-submissions/{timestamp}</code></td></tr>
+    <tr><td><code>NewsletterServlet</code></td><td><code>/bin/greenleaf/subscribe</code></td><td>POST</td><td>Validates email, stores subscription with deduplication at <code>/var/greenleaf-organics/newsletter-subscriptions/{hash}</code></td></tr>
+    <tr><td><code>BlogCommentServlet</code></td><td><code>/bin/greenleaf/comment</code></td><td>GET, POST</td><td>POST saves comments; GET returns comments as JSON for a given page. Stored at <code>/var/greenleaf-organics/blog-comments/{page}/{timestamp}</code></td></tr>
+    <tr><td><code>SimpleServlet</code></td><td>Resource-bound (.txt)</td><td>GET</td><td>Archetype boilerplate — returns page jcr:title as plain text</td></tr>
+  </tbody>
+</table>
+
+<h3>OSGi Services (1)</h3>
+<table>
+  <thead><tr><th>Service</th><th>Implementation</th><th>Methods</th></tr></thead>
+  <tbody>
+    <tr><td><code>FormStorageService</code></td><td><code>FormStorageServiceImpl</code></td><td><code>saveContactSubmission()</code>, <code>saveNewsletterSubscription()</code> (with dedup), <code>getNewsletterSubscriberCount()</code>, <code>getContactSubmissionCount()</code></td></tr>
+  </tbody>
+</table>
+
+<h3>Schedulers (2)</h3>
+<table>
+  <thead><tr><th>Scheduler</th><th>Cron</th><th>Purpose</th></tr></thead>
+  <tbody>
+    <tr><td><code>SubscriptionReportScheduler</code></td><td>Every hour (<code>0 0 * * * ?</code>)</td><td>Logs total newsletter subscribers and contact submissions to AEM error.log</td></tr>
+    <tr><td><code>SimpleScheduledTask</code></td><td>Every 30s</td><td>Archetype boilerplate — debug log message</td></tr>
+  </tbody>
+</table>
+
+<h3>Other Backend Components</h3>
+<table>
+  <thead><tr><th>Class</th><th>Type</th><th>Purpose</th></tr></thead>
+  <tbody>
+    <tr><td><code>LoggingFilter</code></td><td>Sling Filter</td><td>Logs resource path and selector for incoming requests</td></tr>
+    <tr><td><code>SimpleResourceListener</code></td><td>Resource Listener</td><td>Logs JCR resource change events</td></tr>
+  </tbody>
+</table>
+
+<!-- ═══════════════ 9. FRONTEND ═══════════════ -->
+<h2>9. Frontend — JavaScript Features</h2>
+<div class="feature-grid">
+  <div class="feature-item">
+    <strong>Shopping Cart</strong>
+    <span>localStorage-based cart with Add to Cart buttons, cart icon badge, slide-out drawer with quantity controls, subtotal calculation, and Clear Cart action.</span>
+  </div>
+  <div class="feature-item">
+    <strong>Wishlist</strong>
+    <span>Heart icon toggle on product cards, localStorage persistence, header wishlist badge, slide-out drawer with "Move to Cart" action per item.</span>
+  </div>
+  <div class="feature-item">
+    <strong>Product Filtering &amp; Sorting</strong>
+    <span>Client-side filter bar on category pages — filter by badge type (Organic/Local/Vegan), sort by price (low/high) or name (A-Z).</span>
+  </div>
+  <div class="feature-item">
+    <strong>Blog Comments</strong>
+    <span>Comment form + live comment list on blog article pages. Posts to BlogCommentServlet, auto-loads existing comments on page load.</span>
+  </div>
+  <div class="feature-item">
+    <strong>AJAX Form Handling</strong>
+    <span>Contact form and newsletter signup submit via AJAX to Sling servlets. Toast notifications for success/error feedback. Loading states on buttons.</span>
+  </div>
+  <div class="feature-item">
+    <strong>Mobile Hamburger Menu</strong>
+    <span>3-line icon on mobile, slide-out navigation panel from the left with overlay. All nav items displayed as a vertical list with sub-items.</span>
+  </div>
+  <div class="feature-item">
+    <strong>Back to Top Button</strong>
+    <span>Green circular button bottom-right, appears after scrolling 300px, smooth-scrolls to top on click.</span>
+  </div>
+  <div class="feature-item">
+    <strong>Page Loading Animation</strong>
+    <span>Green spinner overlay on page load, fades out when page is ready. Safety timeout prevents indefinite blocking.</span>
+  </div>
+</div>
+
+<!-- ═══════════════ 10. STYLING ═══════════════ -->
+<h2>10. Styling &amp; Responsive Design</h2>
+<h3>Design System Variables</h3>
+<table>
+  <thead><tr><th>Variable</th><th>Value</th><th>Usage</th></tr></thead>
+  <tbody>
+    <tr><td><code>$color-dark-green</code></td><td><code>#2D5016</code></td><td>Footer background, headings, dark accents</td></tr>
+    <tr><td><code>$color-primary-green</code></td><td><code>#4A7C23</code></td><td>Buttons, links, primary brand color</td></tr>
+    <tr><td><code>$color-light-green</code></td><td><code>#8BC34A</code></td><td>Hover states, secondary accents</td></tr>
+    <tr><td><code>$color-background-green</code></td><td><code>#F1F8E9</code></td><td>Section backgrounds, card fills</td></tr>
+    <tr><td><code>$max-width</code></td><td><code>1200px</code></td><td>Content container max width</td></tr>
+    <tr><td><code>$bp-mobile</code></td><td><code>768px</code></td><td>Mobile breakpoint</td></tr>
+    <tr><td><code>$bp-tablet</code></td><td><code>1024px</code></td><td>Tablet breakpoint (card grid: 2 columns)</td></tr>
+  </tbody>
+</table>
+
+<h3>Responsive Breakpoints</h3>
+<table>
+  <thead><tr><th>Width</th><th>Card Grid</th><th>Navigation</th></tr></thead>
+  <tbody>
+    <tr><td>> 1024px (Desktop)</td><td>4 columns</td><td>Horizontal with hover dropdowns</td></tr>
+    <tr><td>769px – 1024px (Tablet)</td><td>2 columns</td><td>Horizontal with hover dropdowns</td></tr>
+    <tr><td>≤ 768px (Mobile)</td><td>1 column</td><td>Hamburger menu with slide-out panel</td></tr>
+  </tbody>
+</table>
+
+<h3>Key CSS Techniques</h3>
+<p><strong>AEM Grid Override:</strong> AEM's default responsive grid uses float-based layout. The site overrides it with CSS Grid (<code>grid-template-columns: repeat(4, 1fr)</code>) scoped to <code>main.container.responsivegrid</code> to avoid affecting header/footer XFs.</p>
+<p><strong>Footer Flattening:</strong> Uses <code>display: contents</code> on nested AEM wrapper elements to make all footer content columns participate in a single 2-column CSS grid.</p>
+<p><strong>Navigation Flattening:</strong> Desktop nav uses <code>display: contents</code> on level-0 items (scoped via <code>@media min-width</code>) to flatten the AEM navigation hierarchy into a single horizontal row.</p>
+
+<!-- ═══════════════ 11. OSGI ═══════════════ -->
+<h2>11. OSGi Configuration</h2>
+<h3>Key Configurations</h3>
+<table>
+  <thead><tr><th>Config File</th><th>Purpose</th></tr></thead>
+  <tbody>
+    <tr><td><code>RepositoryInitializer~greenleaf-organics</code></td><td>Creates service user <code>greenleaf-forms-user</code>, creates <code>/var/greenleaf-organics/</code> paths, sets ACL permissions</td></tr>
+    <tr><td><code>ServiceUserMapperImpl.amended-greenleaf-forms</code></td><td>Maps <code>com.greenleaf.organics.core:greenleaf-forms</code> to the service user</td></tr>
+    <tr><td><code>LogManager.factory.config~greenleaf-organics</code></td><td>Custom logging configuration for the project</td></tr>
+    <tr><td><code>CORSPolicyImpl~greenleaf-organics</code></td><td>CORS policy for author instance</td></tr>
+  </tbody>
+</table>
+
+<!-- ═══════════════ 12. DAM ═══════════════ -->
+<h2>12. DAM &amp; Asset Management</h2>
+<p>All images are stored in the AEM DAM under <code>/content/dam/greenleaf-organics/images/</code> organized by type:</p>
+<table>
+  <thead><tr><th>Folder</th><th>Count</th><th>Contents</th></tr></thead>
+  <tbody>
+    <tr><td><code>/images/hero/</code></td><td>8</td><td>Full-width hero backgrounds (home, products, categories, about)</td></tr>
+    <tr><td><code>/images/categories/</code></td><td>4</td><td>Category card images (fresh-produce, pantry, beverages, wellness)</td></tr>
+    <tr><td><code>/images/products/</code></td><td>12</td><td>Product photos (one per product across all categories)</td></tr>
+    <tr><td><code>/images/blog/</code></td><td>2</td><td>Blog article hero images</td></tr>
+    <tr><td><code>/images/team/</code></td><td>2</td><td>Customer testimonial avatars</td></tr>
+    <tr><td><code>/images/logo/</code></td><td>1</td><td>Greenleaf Organics brand logo</td></tr>
+    <tr><td><code>/icons/</code></td><td>1</td><td>Alternative logo icon</td></tr>
+  </tbody>
+</table>
+
+<!-- ═══════════════ 13. KEY FEATURES ═══════════════ -->
+<h2>13. Key Features &amp; Differentiators</h2>
+<div class="feature-grid">
+  <div class="feature-item">
+    <strong>Editable Templates</strong>
+    <span>7 custom AEM Editable Templates with locked structure (header/footer XFs) and editable content areas with component policies.</span>
+  </div>
+  <div class="feature-item">
+    <strong>Experience Fragments</strong>
+    <span>Shared header and footer as XFs — consistent branding across all pages with a single point of maintenance.</span>
+  </div>
+  <div class="feature-item">
+    <strong>Navigation with Dropdowns</strong>
+    <span>Core Navigation v2 with CSS-only hover dropdowns on desktop and a JS-driven hamburger menu on mobile.</span>
+  </div>
+  <div class="feature-item">
+    <strong>Form Processing Pipeline</strong>
+    <span>Custom servlets receive form data, OSGi service validates and stores in JCR, frontend provides AJAX submission with toast feedback.</span>
+  </div>
+  <div class="feature-item">
+    <strong>Client-Side E-Commerce UX</strong>
+    <span>Shopping cart + wishlist with localStorage persistence, quantity management, subtotal calculation, and inter-feature integration (Move to Cart).</span>
+  </div>
+  <div class="feature-item">
+    <strong>Content-Driven Architecture</strong>
+    <span>All page content authored in JCR/XML — no hardcoded content in templates. Authors can modify text, images, and links without code changes.</span>
+  </div>
+  <div class="feature-item">
+    <strong>Responsive 4-Column Grid</strong>
+    <span>CSS Grid override of AEM's float-based system for product/category cards with responsive breakpoints (4 → 2 → 1 columns).</span>
+  </div>
+  <div class="feature-item">
+    <strong>Automated Reporting</strong>
+    <span>OSGi scheduler runs hourly, aggregating newsletter subscriber and contact submission counts from JCR and logging reports.</span>
+  </div>
+</div>
+
+<!-- ═══════════════ 14. BUILD ═══════════════ -->
+<h2>14. Build &amp; Deployment</h2>
+<h3>Prerequisites</h3>
+<p>Java 11, Maven 3.6+, Node.js 14+, AEM 6.5 running on localhost:4502</p>
+
+<h3>Build Commands</h3>
+<table>
+  <thead><tr><th>Command</th><th>Purpose</th></tr></thead>
+  <tbody>
+    <tr><td><code>mvn clean install -PautoInstallSinglePackage</code></td><td>Full build + deploy to AEM</td></tr>
+    <tr><td><code>cd ui.frontend && npm run dev</code></td><td>Build frontend (SCSS + JS) in dev mode</td></tr>
+    <tr><td><code>cd ui.frontend && npm run prod</code></td><td>Build frontend for production</td></tr>
+    <tr><td><code>mvn install -rf :greenleaf-organics-site.ui.apps</code></td><td>Partial build starting from ui.apps</td></tr>
+    <tr><td><code>mvn install -rf :greenleaf-organics-site.ui.content</code></td><td>Deploy content only</td></tr>
+  </tbody>
+</table>
+
+<h3>Deployment Profile</h3>
+<p>The <code>autoInstallSinglePackage</code> Maven profile deploys the <code>all</code> package to <code>http://localhost:4502</code> using the CRX Package Manager. The content filter uses <code>mode="replace"</code> for page content and <code>mode="merge"</code> for DAM assets.</p>
+
+<!-- ═══════════════ 15. GIT ═══════════════ -->
+<h2>15. Git History</h2>
+<p><strong>Repository:</strong> <code>github.com/SUMITAEM/Greenleaf_Organics</code><br>
+<strong>Branch:</strong> <code>main</code> &nbsp;•&nbsp; <strong>Total Commits:</strong> 35</p>
+<h4>Recent Commits</h4>
+<table>
+  <thead><tr><th>Hash</th><th>Message</th></tr></thead>
+  <tbody>
+    <tr><td><code>8928712</code></td><td>Fix mobile menu: scope display:contents to desktop only</td></tr>
+    <tr><td><code>c03be47</code></td><td>Add 9 new features: UI enhancements, wishlist, filters, comments</td></tr>
+    <tr><td><code>ebb83ee</code></td><td>Add backend features: contact servlet, newsletter servlet, scheduler</td></tr>
+    <tr><td><code>2686743</code></td><td>Add complete site styling, product detail pages, navigation, and cart</td></tr>
+    <tr><td><code>6ab0ad4</code></td><td>Scope card grid to page body only, preserve footer layout</td></tr>
+    <tr><td><code>8413d3e</code></td><td>Greenleaf Organics AEM 6.5 website — complete implementation</td></tr>
+  </tbody>
+</table>
+
+<div style="margin-top:4rem; padding:2rem 0; border-top:2px solid var(--green-100); text-align:center; color:var(--ink-muted); font-size:0.85rem;">
+  <p style="margin:0;">Greenleaf Organics — Project Documentation v1.0</p>
+  <p style="margin:0.25rem 0 0;">September 2026 • AEM 6.5 • com.greenleaf.organics:greenleaf-organics-site:1.0.0-SNAPSHOT</p>
+</div>
+
+</body>
+</html>
