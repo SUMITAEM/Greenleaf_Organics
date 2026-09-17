@@ -389,15 +389,15 @@ code {
 <h2>4. Project Statistics</h2>
 <div class="stats">
   <div class="stat"><div class="stat__number">25</div><div class="stat__label">Content Pages</div></div>
-  <div class="stat"><div class="stat__number">18</div><div class="stat__label">Java Classes</div></div>
-  <div class="stat"><div class="stat__number">60</div><div class="stat__label">SCSS Files</div></div>
+  <div class="stat"><div class="stat__number">22</div><div class="stat__label">Java Classes</div></div>
+  <div class="stat"><div class="stat__number">63</div><div class="stat__label">SCSS Files</div></div>
   <div class="stat"><div class="stat__number">6</div><div class="stat__label">JavaScript Files</div></div>
 </div>
 <div class="stats">
-  <div class="stat"><div class="stat__number">7</div><div class="stat__label">Custom Components</div></div>
+  <div class="stat"><div class="stat__number">9</div><div class="stat__label">Custom Components</div></div>
   <div class="stat"><div class="stat__number">10</div><div class="stat__label">Page Templates</div></div>
   <div class="stat"><div class="stat__number">44</div><div class="stat__label">DAM Assets</div></div>
-  <div class="stat"><div class="stat__number">35</div><div class="stat__label">Git Commits</div></div>
+  <div class="stat"><div class="stat__number">37</div><div class="stat__label">Git Commits</div></div>
 </div>
 
 <!-- ═══════════════ 5. SITE MAP ═══════════════ -->
@@ -413,7 +413,7 @@ code {
     <tr><td>&nbsp;&nbsp;└ <strong>Beverages</strong></td><td>product-listing</td><td>3 product cards: Green Power Smoothie, Cold Brew Coffee, Herbal Kombucha</td></tr>
     <tr><td>&nbsp;&nbsp;└ <strong>Wellness</strong></td><td>product-listing</td><td>3 product cards: Turmeric Supplement, Spirulina Powder, Elderberry Syrup</td></tr>
     <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;└ <strong>12 Product Detail Pages</strong></td><td>product-detail</td><td>Product image, price, description, nutrition facts, Add to Cart button</td></tr>
-    <tr><td><strong>About Us</strong> <code>/us/en/about</code></td><td>about-page</td><td>Hero, company story, farm image, 4 values (feature grid), team section</td></tr>
+    <tr><td><strong>About Us</strong> <code>/us/en/about</code></td><td>about-page</td><td>Hero, company story, farm image, 4 values (feature grid), team members (multifield), FAQ accordion (multifield)</td></tr>
     <tr><td><strong>Blog</strong> <code>/us/en/blog</code></td><td>page-content</td><td>2 article teasers (horizontal card layout)</td></tr>
     <tr><td>&nbsp;&nbsp;└ <strong>Organic Living Guide</strong></td><td>blog-article</td><td>10 tips for organic living — full article with related posts</td></tr>
     <tr><td>&nbsp;&nbsp;└ <strong>Seasonal Recipes</strong></td><td>blog-article</td><td>Fall harvest recipes — soup, salad, roasted vegetables</td></tr>
@@ -444,6 +444,8 @@ code {
     <tr><td><strong>Newsletter Signup</strong></td><td><code>custom/newslettersignup</code></td><td>HTL properties</td><td>Email subscription form. Posts to <code>/bin/greenleaf/subscribe</code> via AJAX. Success/error toast feedback.</td></tr>
     <tr><td><strong>Feature Grid</strong></td><td><code>custom/featuregrid</code></td><td>HTL properties</td><td>Icon-based feature card with selectable icon (leaf, truck, heart, shield), title, and description.</td></tr>
     <tr><td><strong>Cart Icon</strong></td><td><code>custom/carticon</code></td><td>None (static HTML)</td><td>Header component rendering wishlist heart + cart SVG icons with count badges.</td></tr>
+    <tr><td><strong>FAQ Accordion ★</strong></td><td><code>custom/faq</code></td><td><code>FaqModel</code> + <code>FaqItemModel</code></td><td><strong>Multifield component.</strong> Coral multifield dialog with composite question/answer pairs. Model uses <code>@ChildResource</code> to inject <code>List&lt;Resource&gt;</code>, adapts each to <code>FaqItemModel</code>. Accordion expand/collapse UI.</td></tr>
+    <tr><td><strong>Team Members ★</strong></td><td><code>custom/teammembers</code></td><td><code>TeamMembersModel</code> + <code>TeamMemberItem</code></td><td><strong>Multifield component.</strong> Coral multifield dialog with photo (pathfield), name, role, bio fields. Model uses <code>@ChildResource</code> pattern. Renders as responsive 4-column card grid.</td></tr>
   </tbody>
 </table>
 
@@ -465,13 +467,17 @@ code {
 <!-- ═══════════════ 8. BACKEND ═══════════════ -->
 <h2>8. Backend — Servlets, Services &amp; Schedulers</h2>
 
-<h3>Sling Models (3)</h3>
+<h3>Sling Models (7)</h3>
 <table>
-  <thead><tr><th>Model</th><th>Adaptable</th><th>Properties</th></tr></thead>
+  <thead><tr><th>Model</th><th>Adaptable</th><th>Properties / Features</th></tr></thead>
   <tbody>
     <tr><td><code>HerobannerModel</code></td><td>Resource</td><td>backgroundImage, heading, subheading, ctaLabel, ctaLink (auto-appends .html), overlayOpacity</td></tr>
-    <tr><td><code>ProductCardModel</code></td><td>Resource</td><td>productImage, productName, price, badge, description, linkURL (auto-appends .html)</td></tr>
-    <tr><td><code>TestimonialModel</code></td><td>Resource</td><td>quote, authorImage, authorName, authorRole, starRating, stars (computed List&lt;Integer&gt;)</td></tr>
+    <tr><td><code>ProductCardModel</code></td><td>Resource, Request</td><td>productImage, productName, price, badge, description, linkURL. <strong>@Exporter (JSON API)</strong></td></tr>
+    <tr><td><code>TestimonialModel</code></td><td>Resource</td><td>quote, authorImage, authorName, authorRole, starRating, stars (computed List via @PostConstruct)</td></tr>
+    <tr><td><code>FaqModel</code></td><td>Resource</td><td>heading, faqItems (<strong>@ChildResource</strong> multifield → List&lt;FaqItemModel&gt;)</td></tr>
+    <tr><td><code>FaqItemModel</code></td><td>Resource</td><td>question, answer — child resource model for multifield items</td></tr>
+    <tr><td><code>TeamMembersModel</code></td><td>Resource</td><td>heading, members (<strong>@ChildResource</strong> multifield → List&lt;TeamMemberItem&gt;)</td></tr>
+    <tr><td><code>TeamMemberItem</code></td><td>Resource</td><td>photo, name, role, bio — child resource model for multifield items</td></tr>
   </tbody>
 </table>
 
@@ -548,6 +554,104 @@ code {
     <span>Green spinner overlay on page load, fades out when page is ready. Safety timeout prevents indefinite blocking.</span>
   </div>
 </div>
+
+<!-- ═══════════════ 9b. MULTIFIELD DEEP DIVE ═══════════════ -->
+<h2>9b. Multifield Components — Deep Dive</h2>
+<p>Multifield is an advanced AEM dialog feature that allows authors to add a dynamic number of items to a component. Each item contains multiple sub-fields (composite multifield). This project uses the <strong>Coral UI Multifield</strong> widget (<code>granite/ui/components/coral/foundation/form/multifield</code>) with <code>composite="{Boolean}true"</code>.</p>
+
+<h3>Dialog Structure (Coral Multifield)</h3>
+<table>
+  <thead><tr><th>Property</th><th>Value</th><th>Purpose</th></tr></thead>
+  <tbody>
+    <tr><td><code>sling:resourceType</code></td><td><code>granite/ui/components/coral/foundation/form/multifield</code></td><td>Enables the multifield widget in the dialog</td></tr>
+    <tr><td><code>composite</code></td><td><code>{Boolean}true</code></td><td>Each row stores multiple fields as a child node (not a flat string array)</td></tr>
+    <tr><td><code>field > name</code></td><td><code>./faqItems</code></td><td>JCR child node name under which items are stored</td></tr>
+  </tbody>
+</table>
+
+<h3>JCR Storage Pattern</h3>
+<p>When an author adds 3 FAQ items, AEM stores them as child nodes:</p>
+<table>
+  <thead><tr><th>JCR Path</th><th>Properties</th></tr></thead>
+  <tbody>
+    <tr><td><code>/faq/faqItems/item0</code></td><td><code>question="What is organic?"</code>, <code>answer="Organic means..."</code></td></tr>
+    <tr><td><code>/faq/faqItems/item1</code></td><td><code>question="How fresh?"</code>, <code>answer="Within 48 hours..."</code></td></tr>
+    <tr><td><code>/faq/faqItems/item2</code></td><td><code>question="Return policy?"</code>, <code>answer="Full refund..."</code></td></tr>
+  </tbody>
+</table>
+
+<h3>Sling Model Pattern — @ChildResource</h3>
+<p>The parent model injects child resources and adapts them to item models:</p>
+<table>
+  <thead><tr><th>Annotation</th><th>Usage</th></tr></thead>
+  <tbody>
+    <tr><td><code>@ChildResource(name = "faqItems")</code></td><td>Injects child resources under <code>faqItems</code> node as <code>List&lt;Resource&gt;</code></td></tr>
+    <tr><td><code>resource.adaptTo(FaqItemModel.class)</code></td><td>Each child resource is adapted to a typed model in <code>@PostConstruct</code></td></tr>
+    <tr><td><code>@ValueMapValue</code></td><td>Item model injects individual properties (<code>question</code>, <code>answer</code>)</td></tr>
+  </tbody>
+</table>
+
+<h3>HTL Rendering</h3>
+<p>The HTL template iterates the model's list with <code>data-sly-list</code>:</p>
+<table>
+  <thead><tr><th>HTL Expression</th><th>Purpose</th></tr></thead>
+  <tbody>
+    <tr><td><code>data-sly-list.item="${model.faqItems}"</code></td><td>Iterates over each FAQ item from the Sling Model</td></tr>
+    <tr><td><code>${item.question}</code></td><td>Accesses the adapted FaqItemModel's getter</td></tr>
+  </tbody>
+</table>
+
+<!-- ═══════════════ 9c. SLING MODEL EXPORTER ═══════════════ -->
+<h2>9c. Sling Model Exporter (JSON API)</h2>
+<p>The <strong>Sling Model Exporter</strong> is a modern AEM feature that enables headless content delivery by exposing Sling Model data as JSON endpoints. This allows the same content to serve both traditional HTML pages and headless/SPA frontends.</p>
+
+<h3>Implementation</h3>
+<table>
+  <thead><tr><th>Annotation</th><th>Value</th><th>Purpose</th></tr></thead>
+  <tbody>
+    <tr><td><code>@Exporter</code></td><td><code>name = "jackson", extensions = "json"</code></td><td>Registers Jackson JSON serializer for <code>.model.json</code> selector</td></tr>
+    <tr><td><code>@Model(adaptables)</code></td><td><code>{Resource.class, SlingHttpServletRequest.class}</code></td><td>Allows model to adapt from both Resource and Request</td></tr>
+    <tr><td><code>resourceType</code></td><td><code>"greenleaf-organics/components/custom/productcard"</code></td><td>Binds the exporter to the specific component resource type</td></tr>
+  </tbody>
+</table>
+
+<h3>JSON Output Example</h3>
+<p>Accessing a product card node with <code>.model.json</code> selector returns:</p>
+<div class="arch-box" style="text-align:left;font-size:0.82rem;line-height:1.6;">
+<pre>{
+  "productName": "Organic Avocados",
+  "price": "$5.99",
+  "badge": "Organic",
+  "description": "Perfectly ripe Hass avocados...",
+  "productImage": "/content/dam/.../organic-avocados.jpg",
+  "linkURL": "/content/.../organic-avocados.html"
+}</pre>
+</div>
+
+<h3>Use Cases</h3>
+<p><strong>Headless CMS:</strong> React/Vue/Angular SPAs can fetch product data as JSON from AEM without custom servlets. <strong>Mobile Apps:</strong> Native apps consume the same content via REST. <strong>Third-party Integration:</strong> External systems pull product catalog data programmatically.</p>
+
+<!-- ═══════════════ 9d. STYLE SYSTEM ═══════════════ -->
+<h2>9d. AEM Style System</h2>
+<p>The <strong>Style System</strong> allows content authors to apply visual style variants to components from the AEM editor's Styles panel — without any code changes. Authors select a style, and AEM applies a CSS class to the component's wrapper element.</p>
+
+<h3>Available Style Variants</h3>
+<table>
+  <thead><tr><th>Component</th><th>Style Name</th><th>CSS Class</th><th>Effect</th></tr></thead>
+  <tbody>
+    <tr><td rowspan="2"><strong>Hero Banner</strong></td><td>Compact</td><td><code>cmp-herobanner--compact</code></td><td>Reduced height (300px), smaller text</td></tr>
+    <tr><td>Light Overlay</td><td><code>cmp-herobanner--light-overlay</code></td><td>White overlay with dark green text</td></tr>
+    <tr><td rowspan="2"><strong>Product Card</strong></td><td>Horizontal</td><td><code>cmp-productcard--horizontal</code></td><td>Side-by-side image + info layout</td></tr>
+    <tr><td>Bordered</td><td><code>cmp-productcard--bordered</code></td><td>Border instead of shadow</td></tr>
+    <tr><td rowspan="2"><strong>Testimonial</strong></td><td>Left-aligned</td><td><code>cmp-testimonial--left</code></td><td>Left-aligned text with left border accent</td></tr>
+    <tr><td>Minimal</td><td><code>cmp-testimonial--minimal</code></td><td>Transparent background, no shadow</td></tr>
+    <tr><td><strong>FAQ</strong></td><td>Boxed</td><td><code>cmp-faq--boxed</code></td><td>Individual bordered items with spacing</td></tr>
+  </tbody>
+</table>
+
+<h3>How It Works</h3>
+<p><strong>Author Experience:</strong> Select a component in the Page Editor → open the Styles panel → choose a visual variant. AEM adds the corresponding CSS class to the component's <code>&lt;div&gt;</code> wrapper. The CSS in the clientlib handles the visual change.</p>
+<p><strong>Configuration:</strong> Styles are defined in template policies via <code>cq:styleGroups</code> with <code>cq:styleId</code> and <code>cq:styleClasses</code> properties. Each group can contain multiple style options.</p>
 
 <!-- ═══════════════ 10. STYLING ═══════════════ -->
 <h2>10. Styling &amp; Responsive Design</h2>
@@ -643,6 +747,22 @@ code {
   <div class="feature-item">
     <strong>Automated Reporting</strong>
     <span>OSGi scheduler runs hourly, aggregating newsletter subscriber and contact submission counts from JCR and logging reports.</span>
+  </div>
+  <div class="feature-item">
+    <strong>Coral Multifield Dialogs</strong>
+    <span>FAQ and Team Members components use composite multifield — authors add/remove/reorder items dynamically. Data stored as JCR child resources, injected via @ChildResource.</span>
+  </div>
+  <div class="feature-item">
+    <strong>Sling Model Exporter (JSON API)</strong>
+    <span>ProductCardModel annotated with @Exporter enables headless JSON delivery. Access product data at .model.json — no custom servlet needed.</span>
+  </div>
+  <div class="feature-item">
+    <strong>AEM Style System</strong>
+    <span>Authors select visual variants (Compact, Horizontal, Minimal, Boxed) from the Styles panel. CSS classes applied automatically — zero code changes per variant.</span>
+  </div>
+  <div class="feature-item">
+    <strong>Blog Comment System</strong>
+    <span>Full-stack comments: BlogCommentServlet (GET+POST) stores comments in JCR, frontend auto-loads and renders comment threads on blog articles.</span>
   </div>
 </div>
 
