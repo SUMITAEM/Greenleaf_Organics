@@ -38,6 +38,16 @@
                     sling:resourceType="greenleaf-organics/components/container"
                     editable="{Boolean}true"
                     layout="responsiveGrid"/>
+                <teammembers-section
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/container"
+                    editable="{Boolean}true"
+                    layout="responsiveGrid"/>
+                <faq-section
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="greenleaf-organics/components/container"
+                    editable="{Boolean}true"
+                    layout="responsiveGrid"/>
             </container>
             <experiencefragment-footer
                 jcr:primaryType="nt:unstructured"

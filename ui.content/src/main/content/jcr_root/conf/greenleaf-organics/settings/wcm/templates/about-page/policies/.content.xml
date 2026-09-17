@@ -105,6 +105,32 @@
                         </components>
                     </greenleaf-organics>
                 </team-section>
+                <teammembers-section
+                    cq:policy="greenleaf-organics/components/container/policy_1574695586800"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/core/components/policies/mapping">
+                    <greenleaf-organics jcr:primaryType="nt:unstructured">
+                        <components jcr:primaryType="nt:unstructured">
+                            <teammembers
+                                cq:policy="greenleaf-organics/components/container/policy_1574695586800"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wcm/core/components/policies/mapping"/>
+                        </components>
+                    </greenleaf-organics>
+                </teammembers-section>
+                <faq-section
+                    cq:policy="greenleaf-organics/components/container/policy_1574695586800"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/core/components/policies/mapping">
+                    <greenleaf-organics jcr:primaryType="nt:unstructured">
+                        <components jcr:primaryType="nt:unstructured">
+                            <faq
+                                cq:policy="greenleaf-organics/components/container/policy_1574695586800"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wcm/core/components/policies/mapping"/>
+                        </components>
+                    </greenleaf-organics>
+                </faq-section>
             </container>
         </root>
     </jcr:content>
