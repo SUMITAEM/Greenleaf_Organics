@@ -42,34 +42,63 @@
         overlay.className = "mobile-menu-overlay";
         document.body.appendChild(overlay);
 
-        burger.addEventListener("click", function () {
-            nav.classList.toggle("is-open");
-            overlay.classList.toggle("is-open");
-            document.body.style.overflow = nav.classList.contains("is-open") ? "hidden" : "";
-            burger.innerHTML = nav.classList.contains("is-open")
-                ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
-                : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
-        });
-
-        overlay.addEventListener("click", function () {
+        function closeMenu() {
             nav.classList.remove("is-open");
             overlay.classList.remove("is-open");
             document.body.style.overflow = "";
             burger.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+        }
+
+        burger.addEventListener("click", function (e) {
+            e.stopPropagation();
+            if (nav.classList.contains("is-open")) {
+                closeMenu();
+            } else {
+                nav.classList.add("is-open");
+                overlay.classList.add("is-open");
+                document.body.style.overflow = "hidden";
+                burger.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+            }
+        });
+
+        overlay.addEventListener("click", closeMenu);
+
+        // Make nav links clickable — close menu and navigate
+        nav.addEventListener("click", function (e) {
+            var link = e.target.closest(".cmp-navigation__item-link");
+            if (link && link.href) {
+                e.preventDefault();
+                closeMenu();
+                window.location.href = link.href;
+            }
         });
     }
 
     // ── Page Loader ──
     function initLoader() {
+        // Skip loader if page already loaded (async script)
+        if (document.readyState === "complete") return;
+
         var loader = document.createElement("div");
         loader.className = "page-loader";
         loader.innerHTML = '<div class="page-loader__spinner"></div>';
         document.body.insertBefore(loader, document.body.firstChild);
 
-        window.addEventListener("load", function () {
+        function hideLoader() {
             loader.classList.add("is-hidden");
             setTimeout(function () { loader.remove(); }, 500);
-        });
+        }
+
+        if (document.readyState === "complete") {
+            hideLoader();
+        } else {
+            window.addEventListener("load", hideLoader);
+        }
+
+        // Safety: remove loader after 5 seconds no matter what
+        setTimeout(function () {
+            if (loader.parentNode) loader.remove();
+        }, 5000);
     }
 
     // ── Init ──
