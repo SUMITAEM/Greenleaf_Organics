@@ -20,8 +20,9 @@ footer.experiencefragment {
     .cmp-experiencefragment .aem-Grid.aem-Grid--12,
     .cmp-experiencefragment .aem-Grid.aem-Grid--12.aem-Grid--default--12 {
         display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 2rem !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 3rem !important;
+        justify-items: center;
         width: 100% !important;
         max-width: none !important;
         float: none !important;
