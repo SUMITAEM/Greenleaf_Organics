@@ -45,9 +45,9 @@
                         text="&lt;p&gt;Greenleaf Organics was founded in 2005 by a small group of passionate farmers in the heart of California's Central Valley. What began as a single family farm with a dream of bringing truly organic produce to local communities has grown into a trusted name in sustainable agriculture. From the very beginning, our founders believed that food should be grown the way nature intended — free from synthetic pesticides, artificial fertilizers, and genetically modified organisms.&lt;/p&gt;&lt;p&gt;Over the past two decades, we have built lasting partnerships with over 50 local farms that share our commitment to organic practices and environmental stewardship. Each of our partner farms is carefully vetted and certified organic, ensuring that every product bearing the Greenleaf name meets the highest standards of quality and sustainability. Together, we cultivate more than 200 varieties of fruits, vegetables, grains, and herbs across thousands of acres of responsibly managed farmland.&lt;/p&gt;&lt;p&gt;Our mission is simple: to make fresh, organic food accessible to everyone. We believe that choosing organic should not be a luxury — it should be an everyday option for families who care about their health and the health of our planet. Through our farm-to-table delivery service, community markets, and retail partnerships, we are working to bring the goodness of organic farming to tables across the country, one harvest at a time.&lt;/p&gt;"/>
                     <image
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="greenleaf-organics/components/image"
-                        fileReference="/content/dam/greenleaf-organics/images/hero/bernd-dittrich-iD-3OzgXGEY-unsplash.jpg"
-                        alt="Our organic farm"/>
+                        sling:resourceType="greenleaf-organics/components/text"
+                        textIsRich="true"
+                        text="&lt;p&gt;&lt;img src=&quot;/content/dam/greenleaf-organics/images/hero/bernd-dittrich-iD-3OzgXGEY-unsplash.jpg&quot; alt=&quot;Our organic farm&quot; style=&quot;width:100%;height:auto;border-radius:8px&quot;/&gt;&lt;/p&gt;"/>
                 </story-section>
                 <values-section
                     jcr:primaryType="nt:unstructured"
