@@ -135,7 +135,9 @@ main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--
 main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .breadcrumb.aem-GridColumn.aem-GridColumn--default--12,
 main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .separator.aem-GridColumn.aem-GridColumn--default--12,
 main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .teaser.aem-GridColumn.aem-GridColumn--default--12,
-main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .embed.aem-GridColumn.aem-GridColumn--default--12 {
+main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .embed.aem-GridColumn.aem-GridColumn--default--12,
+main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .faq.aem-GridColumn.aem-GridColumn--default--12,
+main.container.responsivegrid .cmp-container > .aem-Grid.aem-Grid--12.aem-Grid--default--12 > .teammembers.aem-GridColumn.aem-GridColumn--default--12 {
     grid-column: 1 / -1 !important;
 }
 

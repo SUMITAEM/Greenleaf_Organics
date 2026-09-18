@@ -1,17 +1,26 @@
 .cmp-faq {
     max-width: 800px;
     margin: 0 auto;
+    padding: 2rem 0;
 
     &__heading {
         text-align: center;
         color: $color-dark-green;
-        margin-bottom: 2rem;
+        font-size: 1.75rem;
+        margin-bottom: 2.5rem;
+    }
+
+    &__list {
+        border: 1px solid $color-border;
+        border-radius: $border-radius;
+        overflow: hidden;
     }
 
     &__item {
         border-bottom: 1px solid $color-border;
+        background: $color-white;
 
-        &:first-child { border-top: 1px solid $color-border; }
+        &:last-child { border-bottom: none; }
     }
 
     &__question {
@@ -19,21 +28,25 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 1.25rem 0.5rem;
+        padding: 1.25rem 1.5rem;
         background: none;
         border: none;
         cursor: pointer;
         font-family: inherit;
-        font-size: 1.05rem;
+        font-size: 1rem;
         font-weight: 600;
         color: $color-dark-green;
         text-align: left;
-        transition: color 0.2s ease;
+        transition: background 0.2s ease, color 0.2s ease;
 
-        &:hover { color: $color-primary-green; }
+        &:hover {
+            background: $color-background-green;
+            color: $color-primary-green;
+        }
 
         &[aria-expanded="true"] {
             color: $color-primary-green;
+            background: $color-background-green;
 
             .cmp-faq__icon { transform: rotate(180deg); }
         }
@@ -45,13 +58,15 @@
         flex-shrink: 0;
         margin-left: 1rem;
         transition: transform 0.3s ease;
+        color: $color-primary-green;
     }
 
     &__answer {
         display: none;
-        padding: 0 0.5rem 1.25rem;
+        padding: 0 1.5rem 1.5rem;
         color: $color-foreground-light;
-        line-height: 1.7;
+        line-height: 1.8;
+        font-size: 0.95rem;
 
         &.is-open { display: block; }
 
