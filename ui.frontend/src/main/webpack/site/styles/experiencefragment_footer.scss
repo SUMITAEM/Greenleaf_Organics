@@ -11,7 +11,7 @@ footer.experiencefragment {
     > .cmp-experiencefragment {
         max-width: $max-width;
         margin: 0 auto;
-        padding: 3rem $gutter 0;
+        padding: 1.5rem $gutter 0;
     }
 
     // ── Override ALL AEM grid/float layout inside footer ──
@@ -21,8 +21,7 @@ footer.experiencefragment {
     .cmp-experiencefragment .aem-Grid.aem-Grid--12.aem-Grid--default--12 {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
-        gap: 3rem !important;
-        justify-items: center;
+        gap: 2rem !important;
         width: 100% !important;
         max-width: none !important;
         float: none !important;
@@ -93,15 +92,15 @@ footer.experiencefragment {
 
     h3 {
         color: $color-white;
-        font-size: 1.25rem;
-        margin-bottom: 1rem;
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
         font-weight: 600;
     }
 
     p {
         color: rgba(255, 255, 255, 0.75);
-        line-height: 1.7;
-        font-size: 0.9375rem;
+        line-height: 1.5;
+        font-size: 0.85rem;
     }
 
     ul {
@@ -110,7 +109,7 @@ footer.experiencefragment {
         padding: 0;
 
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.35rem;
 
             a {
                 display: inline-block;
@@ -136,10 +135,10 @@ footer.experiencefragment {
 
     // ── Copyright bar ──
     .separator ~ .text .cmp-text {
-        padding: 1.25rem 0;
+        padding: 0.75rem 0 1rem;
         text-align: center;
-        font-size: 0.875rem;
-        opacity: 0.7;
+        font-size: 0.8rem;
+        opacity: 0.6;
 
         p { margin: 0; }
     }
