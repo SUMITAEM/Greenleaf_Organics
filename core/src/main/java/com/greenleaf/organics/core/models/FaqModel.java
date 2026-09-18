@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.ChildResource;
+import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(adaptables = Resource.class,
@@ -19,17 +19,18 @@ public class FaqModel {
     @ValueMapValue
     private String heading;
 
-    @ChildResource(name = "faqItems")
-    private List<Resource> faqItemResources;
+    @Self
+    private Resource resource;
 
     private List<FaqItemModel> faqItems;
 
     @PostConstruct
     protected void init() {
         faqItems = new ArrayList<>();
-        if (faqItemResources != null) {
-            for (Resource res : faqItemResources) {
-                FaqItemModel item = res.adaptTo(FaqItemModel.class);
+        Resource itemsNode = resource.getChild("faqItems");
+        if (itemsNode != null) {
+            for (Resource child : itemsNode.getChildren()) {
+                FaqItemModel item = child.adaptTo(FaqItemModel.class);
                 if (item != null && item.getQuestion() != null) {
                     faqItems.add(item);
                 }
