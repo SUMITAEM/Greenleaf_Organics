@@ -20,7 +20,7 @@
                 <links-column
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="greenleaf-organics/components/text"
-                    text="&lt;h3>Quick Links&lt;/h3>&lt;ul>&lt;li>&lt;a href='/content/greenleaf-organics/us/en'>Home&lt;/a>&lt;/li>&lt;li>&lt;a href='/content/greenleaf-organics/us/en/products'>Products&lt;/a>&lt;/li>&lt;li>&lt;a href='/content/greenleaf-organics/us/en/about'>About Us&lt;/a>&lt;/li>&lt;li>&lt;a href='/content/greenleaf-organics/us/en/blog'>Blog&lt;/a>&lt;/li>&lt;li>&lt;a href='/content/greenleaf-organics/us/en/contact'>Contact&lt;/a>&lt;/li>&lt;/ul>"
+                    text="&lt;h3>Quick Links&lt;/h3>&lt;ul>&lt;li>&lt;a href='/content/greenleaf-organics/us/en.html'>Home&lt;/a>&lt;/li>&lt;li>&lt;a href='/content/greenleaf-organics/us/en/products.html'>Products&lt;/a>&lt;/li>&lt;li>&lt;a href='/content/greenleaf-organics/us/en/about.html'>About Us&lt;/a>&lt;/li>&lt;li>&lt;a href='/content/greenleaf-organics/us/en/blog.html'>Blog&lt;/a>&lt;/li>&lt;li>&lt;a href='/content/greenleaf-organics/us/en/contact.html'>Contact&lt;/a>&lt;/li>&lt;/ul>"
                     textIsRich="true"/>
                 <contact-column
                     jcr:primaryType="nt:unstructured"
